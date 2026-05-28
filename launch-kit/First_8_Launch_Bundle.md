@@ -1,0 +1,1 @@
+Pre-selected best 8 products to launch first, with exact image recommendations and Canva guidance.

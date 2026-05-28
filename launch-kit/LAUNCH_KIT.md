@@ -1,0 +1,1 @@
+See local version in ClarityForge_Digital/LAUNCH_KIT.md for the complete user-facing launch instructions and notification triggers.
