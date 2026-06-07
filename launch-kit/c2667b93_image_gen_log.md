@@ -1,0 +1,1 @@
+[full subagent log with 20 assets, prompts, paths, descriptions for integration into listings/bundles]
