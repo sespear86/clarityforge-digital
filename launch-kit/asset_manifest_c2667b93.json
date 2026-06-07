@@ -1,0 +1,41 @@
+{
+  "auton": "c2667b93",
+  "updated": "2026-06-07",
+  "total_assets": 26,
+  "accounting": "20 primary image_gen wave (session) + 6 kickoff samples (numbered 1-6 in assets/c2667b93_batch/)",
+  "legal_note": "Pair every listing with full AI disclosure + wellness disclaimer from scripts/batch_asset_prompts.py",
+  "base_paths": {
+    "local": "/home/Irikash/ClarityForge_Digital",
+    "session_named": "session/images/c2667b93_batch/",
+    "assets_dir": "assets/c2667b93_batch/",
+    "clone_mirror": "/tmp/clarityforge-digital/assets/c2667b93_batch/"
+  },
+  "assets": [
+    {"id": 1, "slug": "crossover-ns-operating-system", "file": "01_crossover_nervous_system_operating_system_bundle.jpg", "type": "bundle_cover", "listing_ref": "PKG-001"},
+    {"id": 2, "slug": "adhd-rejection-sensitivity", "file": "02_adhd_rejection_sensitivity_challenge_cover.jpg", "type": "product_cover", "batch_title_match": "Rejection Sensitivity Challenge"},
+    {"id": 3, "slug": "adhd-task-initiation", "file": "03_adhd_task_initiation_challenge_cover.jpg", "type": "product_cover", "batch_title_match": "Task Initiation Challenge"},
+    {"id": 4, "slug": "peri-lifestyle-experiments", "file": "04_perimenopause_lifestyle_experiments_cover.jpg", "type": "product_cover", "batch_title_match": "Lifestyle Experiments"},
+    {"id": 5, "slug": "solo-energy-content-calendar", "file": "05_solopreneur_energy_content_calendar_cover.jpg", "type": "product_cover", "batch_title_match": "Content Calendar"},
+    {"id": 6, "slug": "peri-mood-awareness", "file": "06_perimenopause_mood_awareness_cover.jpg", "type": "product_cover", "batch_title_match": "Mood Awareness"},
+    {"id": 7, "slug": "peri-nervous-system-support", "file": "07_perimenopause_nervous_system_support_cover.jpg", "type": "product_cover", "batch_title_match": "Nervous System Support"},
+    {"id": 8, "slug": "adhd-working-memory", "file": "08_adhd_working_memory_journal_cover.jpg", "type": "product_cover", "batch_title_match": "Working Memory"},
+    {"id": 9, "slug": "adhd-burnout-recovery", "file": "09_adhd_burnout_recovery_tracker_cover.jpg", "type": "product_cover", "batch_title_match": "Burnout Recovery"},
+    {"id": 10, "slug": "adhd-hyperfocus-kit", "file": "10_adhd_hyperfocus_management_kit_cover.jpg", "type": "product_cover", "batch_title_match": "Hyperfocus Management"},
+    {"id": 11, "slug": "wall-art-calm-focus", "file": "11_wall_art_calm_and_focus_2x3.jpg", "type": "wall_art", "batch_title_match": "Calm & Focus"},
+    {"id": 12, "slug": "pinterest-peri-solo-pin", "file": "12_pinterest_peri_solo_mood_energy_pin_9x16.jpg", "type": "pinterest_pin", "listing_ref": "PKG-010"},
+    {"id": 13, "slug": "crossover-hormone-aware-solo", "file": "13_crossover_hormone_aware_solopreneur_bundle.jpg", "type": "bundle_cover", "listing_ref": "PKG-003"},
+    {"id": 14, "slug": "wall-art-grounded-presence", "file": "14_wall_art_grounded_presence_2x3.jpg", "type": "wall_art", "batch_title_match": "Grounded Presence"},
+    {"id": 15, "slug": "peri-sleep-optimization", "file": "15_perimenopause_sleep_optimization_cover.jpg", "type": "product_cover", "batch_title_match": "Sleep Optimization"},
+    {"id": 16, "slug": "crossover-peri-energy-solo", "file": "16_crossover_peri_energy_solopreneur_journal.jpg", "type": "bundle_cover", "listing_ref": "PKG-004"},
+    {"id": 17, "slug": "wall-art-morning-light", "file": "17_wall_art_morning_light_2x3.jpg", "type": "wall_art", "batch_title_match": "Morning Light"},
+    {"id": 18, "slug": "wall-art-gentle-strength", "file": "18_wall_art_gentle_strength_2x3.jpg", "type": "wall_art", "batch_title_match": "Gentle Strength"},
+    {"id": 19, "slug": "wall-art-embodied-self", "file": "19_wall_art_embodied_self_2x3.jpg", "type": "wall_art", "batch_title_match": "Embodied Self"},
+    {"id": 20, "slug": "solo-client-pipeline-adhd", "file": "20_solopreneur_client_pipeline_adhd_friendly_cover.jpg", "type": "product_cover", "batch_title_match": "Client Pipeline"},
+    {"id": 21, "slug": "kickoff-sample-1", "file": "1.jpg", "type": "legacy_sample"},
+    {"id": 22, "slug": "kickoff-sample-2", "file": "2.jpg", "type": "legacy_sample"},
+    {"id": 23, "slug": "kickoff-sample-3", "file": "3.jpg", "type": "legacy_sample"},
+    {"id": 24, "slug": "kickoff-sample-4", "file": "4.jpg", "type": "legacy_sample"},
+    {"id": 25, "slug": "kickoff-sample-5", "file": "5.jpg", "type": "legacy_sample"},
+    {"id": 26, "slug": "kickoff-sample-6", "file": "6.jpg", "type": "legacy_sample"}
+  ]
+}
