@@ -1,1 +1,548 @@
-Full batch JSON from script run (30 items with legal disclosure injected; truncated in this call for length, but real file pushed with all ideas, titles, descriptions including exact AI disclosure + wellness disclaimers, tags, prices, prompts, generated_for: AUTON c2667b93). See clone or prior for structure.
+{
+  "generated_at": "2026-06-07T23:45:42.273239Z",
+  "auton": "c2667b93",
+  "total": 30,
+  "legal_note": "All items include exact seed disclosure + disclaimers.",
+  "items": [
+    {
+      "title": "Solopreneur / Creator Content Batching Tracker | Printable PDF | Digital Download",
+      "description": "High emotional need in Solopreneur / Creator audience. Specific angle reduces competition. Easy to bundle. High \u2014 pairs well with existing planners/trackers in the same niche.\n\nAI Disclosure: This digital product was created with AI assistance (Grok 4.3 / xAI) under original human prompts + heavy curation, original layout, text structures, and value-add. Every element complies with Etsy and platform policies. For personal use only. Not for resale or redistribution without permission. Wellness Disclaimer: This is not medical, therapeutic, or professional advice. Consult qualified professionals for health, mental health, or business concerns. Results vary. Use at your own discretion.",
+      "tags": [
+        "printable",
+        "digital download",
+        "solopreneur-creator",
+        "content-batching",
+        "planner",
+        "tracker",
+        "journal"
+      ],
+      "price": "$9-14",
+      "image_prompt": "Elegant premium cover or key visual for a Solopreneur / Creator tracker about content batching, clean minimalist design, generous white space, soft sage green and warm beige palette, modern sans typography, subtle botanical or abstract line elements, premium digital product aesthetic, high quality digital product style, square or portrait orientation suitable for Etsy",
+      "legal_enforced": true,
+      "disclosure": "AI Disclosure: This digital product was created with AI assistance (Grok 4.3 / xAI) under original human prompts + heavy curation, original layout, text structures, and value-add. Every element compli...",
+      "generated_for": "AUTON c2667b93"
+    },
+    {
+      "title": "ADHD / Neurodivergent Task Initiation Challenge | Printable PDF | Digital Download",
+      "description": "High emotional need in ADHD / Neurodivergent audience. Specific angle reduces competition. Easy to bundle. High \u2014 pairs well with existing planners/trackers in the same niche.\n\nAI Disclosure: This digital product was created with AI assistance (Grok 4.3 / xAI) under original human prompts + heavy curation, original layout, text structures, and value-add. Every element complies with Etsy and platform policies. For personal use only. Not for resale or redistribution without permission. Wellness Disclaimer: This is not medical, therapeutic, or professional advice. Consult qualified professionals for health, mental health, or business concerns. Results vary. Use at your own discretion.",
+      "tags": [
+        "printable",
+        "digital download",
+        "adhd-neurodivergent",
+        "task-initiation",
+        "planner",
+        "tracker",
+        "journal"
+      ],
+      "price": "$12-19",
+      "image_prompt": "Elegant premium cover or key visual for a ADHD / Neurodivergent challenge about task initiation, clean minimalist design, generous white space, soft sage green and warm beige palette, modern sans typography, subtle botanical or abstract line elements, premium digital product aesthetic, high quality digital product style, square or portrait orientation suitable for Etsy",
+      "legal_enforced": true,
+      "disclosure": "AI Disclosure: This digital product was created with AI assistance (Grok 4.3 / xAI) under original human prompts + heavy curation, original layout, text structures, and value-add. Every element compli...",
+      "generated_for": "AUTON c2667b93"
+    },
+    {
+      "title": "Solopreneur / Creator Tax Prep Made Simple Planner | Printable PDF | Digital Download",
+      "description": "High emotional need in Solopreneur / Creator audience. Specific angle reduces competition. Easy to bundle. High \u2014 pairs well with existing planners/trackers in the same niche.\n\nAI Disclosure: This digital product was created with AI assistance (Grok 4.3 / xAI) under original human prompts + heavy curation, original layout, text structures, and value-add. Every element complies with Etsy and platform policies. For personal use only. Not for resale or redistribution without permission. Wellness Disclaimer: This is not medical, therapeutic, or professional advice. Consult qualified professionals for health, mental health, or business concerns. Results vary. Use at your own discretion.",
+      "tags": [
+        "printable",
+        "digital download",
+        "solopreneur-creator",
+        "tax-prep-made-simple",
+        "planner",
+        "tracker",
+        "journal"
+      ],
+      "price": "$12-19",
+      "image_prompt": "Elegant premium cover or key visual for a Solopreneur / Creator planner about tax prep made simple, clean minimalist design, generous white space, soft sage green and warm beige palette, modern sans typography, subtle botanical or abstract line elements, premium digital product aesthetic, high quality digital product style, square or portrait orientation suitable for Etsy",
+      "legal_enforced": true,
+      "disclosure": "AI Disclosure: This digital product was created with AI assistance (Grok 4.3 / xAI) under original human prompts + heavy curation, original layout, text structures, and value-add. Every element compli...",
+      "generated_for": "AUTON c2667b93"
+    },
+    {
+      "title": "Solopreneur / Creator Quarterly Planning Invoice Pack | Printable PDF | Digital Download",
+      "description": "High emotional need in Solopreneur / Creator audience. Specific angle reduces competition. Easy to bundle. High \u2014 pairs well with existing planners/trackers in the same niche.\n\nAI Disclosure: This digital product was created with AI assistance (Grok 4.3 / xAI) under original human prompts + heavy curation, original layout, text structures, and value-add. Every element complies with Etsy and platform policies. For personal use only. Not for resale or redistribution without permission. Wellness Disclaimer: This is not medical, therapeutic, or professional advice. Consult qualified professionals for health, mental health, or business concerns. Results vary. Use at your own discretion.",
+      "tags": [
+        "printable",
+        "digital download",
+        "solopreneur-creator",
+        "quarterly-planning",
+        "planner",
+        "tracker",
+        "journal"
+      ],
+      "price": "$12-19",
+      "image_prompt": "Elegant premium cover or key visual for a Solopreneur / Creator invoice pack about quarterly planning, clean minimalist design, generous white space, soft sage green and warm beige palette, modern sans typography, subtle botanical or abstract line elements, premium digital product aesthetic, high quality digital product style, square or portrait orientation suitable for Etsy",
+      "legal_enforced": true,
+      "disclosure": "AI Disclosure: This digital product was created with AI assistance (Grok 4.3 / xAI) under original human prompts + heavy curation, original layout, text structures, and value-add. Every element compli...",
+      "generated_for": "AUTON c2667b93"
+    },
+    {
+      "title": "Perimenopause / Menopause Lifestyle Experiments Wellness Guide | Printable PDF | Digital Download",
+      "description": "High emotional need in Perimenopause / Menopause audience. Specific angle reduces competition. Easy to bundle. High \u2014 pairs well with existing planners/trackers in the same niche.\n\nAI Disclosure: This digital product was created with AI assistance (Grok 4.3 / xAI) under original human prompts + heavy curation, original layout, text structures, and value-add. Every element complies with Etsy and platform policies. For personal use only. Not for resale or redistribution without permission. Wellness Disclaimer: This is not medical, therapeutic, or professional advice. Consult qualified professionals for health, mental health, or business concerns. Results vary. Use at your own discretion.",
+      "tags": [
+        "printable",
+        "digital download",
+        "perimenopause-menopause",
+        "lifestyle-experiments",
+        "planner",
+        "tracker",
+        "journal"
+      ],
+      "price": "$12-19",
+      "image_prompt": "Elegant premium cover or key visual for a Perimenopause / Menopause wellness guide about lifestyle experiments, clean minimalist design, generous white space, soft sage green and warm beige palette, modern sans typography, subtle botanical or abstract line elements, premium digital product aesthetic, high quality digital product style, square or portrait orientation suitable for Etsy",
+      "legal_enforced": true,
+      "disclosure": "AI Disclosure: This digital product was created with AI assistance (Grok 4.3 / xAI) under original human prompts + heavy curation, original layout, text structures, and value-add. Every element compli...",
+      "generated_for": "AUTON c2667b93"
+    },
+    {
+      "title": "ADHD / Neurodivergent Rejection Sensitivity Challenge | Printable PDF | Digital Download",
+      "description": "High emotional need in ADHD / Neurodivergent audience. Specific angle reduces competition. Easy to bundle. High \u2014 pairs well with existing planners/trackers in the same niche.\n\nAI Disclosure: This digital product was created with AI assistance (Grok 4.3 / xAI) under original human prompts + heavy curation, original layout, text structures, and value-add. Every element complies with Etsy and platform policies. For personal use only. Not for resale or redistribution without permission. Wellness Disclaimer: This is not medical, therapeutic, or professional advice. Consult qualified professionals for health, mental health, or business concerns. Results vary. Use at your own discretion.",
+      "tags": [
+        "printable",
+        "digital download",
+        "adhd-neurodivergent",
+        "rejection-sensitivity",
+        "planner",
+        "tracker",
+        "journal"
+      ],
+      "price": "$12-19",
+      "image_prompt": "Elegant premium cover or key visual for a ADHD / Neurodivergent challenge about rejection sensitivity, clean minimalist design, generous white space, soft sage green and warm beige palette, modern sans typography, subtle botanical or abstract line elements, premium digital product aesthetic, high quality digital product style, square or portrait orientation suitable for Etsy",
+      "legal_enforced": true,
+      "disclosure": "AI Disclosure: This digital product was created with AI assistance (Grok 4.3 / xAI) under original human prompts + heavy curation, original layout, text structures, and value-add. Every element compli...",
+      "generated_for": "AUTON c2667b93"
+    },
+    {
+      "title": "Solopreneur / Creator Client Pipeline Tracker | Printable PDF | Digital Download",
+      "description": "High emotional need in Solopreneur / Creator audience. Specific angle reduces competition. Easy to bundle. High \u2014 pairs well with existing planners/trackers in the same niche.\n\nAI Disclosure: This digital product was created with AI assistance (Grok 4.3 / xAI) under original human prompts + heavy curation, original layout, text structures, and value-add. Every element complies with Etsy and platform policies. For personal use only. Not for resale or redistribution without permission. Wellness Disclaimer: This is not medical, therapeutic, or professional advice. Consult qualified professionals for health, mental health, or business concerns. Results vary. Use at your own discretion.",
+      "tags": [
+        "printable",
+        "digital download",
+        "solopreneur-creator",
+        "client-pipeline",
+        "planner",
+        "tracker",
+        "journal"
+      ],
+      "price": "$9-14",
+      "image_prompt": "Elegant premium cover or key visual for a Solopreneur / Creator tracker about client pipeline, clean minimalist design, generous white space, soft sage green and warm beige palette, modern sans typography, subtle botanical or abstract line elements, premium digital product aesthetic, high quality digital product style, square or portrait orientation suitable for Etsy",
+      "legal_enforced": true,
+      "disclosure": "AI Disclosure: This digital product was created with AI assistance (Grok 4.3 / xAI) under original human prompts + heavy curation, original layout, text structures, and value-add. Every element compli...",
+      "generated_for": "AUTON c2667b93"
+    },
+    {
+      "title": "Solopreneur / Creator Energy Management For Business Content Calendar | Printable PDF | Digital Download",
+      "description": "High emotional need in Solopreneur / Creator audience. Specific angle reduces competition. Easy to bundle. High \u2014 pairs well with existing planners/trackers in the same niche.\n\nAI Disclosure: This digital product was created with AI assistance (Grok 4.3 / xAI) under original human prompts + heavy curation, original layout, text structures, and value-add. Every element complies with Etsy and platform policies. For personal use only. Not for resale or redistribution without permission. Wellness Disclaimer: This is not medical, therapeutic, or professional advice. Consult qualified professionals for health, mental health, or business concerns. Results vary. Use at your own discretion.",
+      "tags": [
+        "printable",
+        "digital download",
+        "solopreneur-creator",
+        "energy-management-for-business",
+        "planner",
+        "tracker",
+        "journal"
+      ],
+      "price": "$12-19",
+      "image_prompt": "Elegant premium cover or key visual for a Solopreneur / Creator content calendar about energy management for business, clean minimalist design, generous white space, soft sage green and warm beige palette, modern sans typography, subtle botanical or abstract line elements, premium digital product aesthetic, high quality digital product style, square or portrait orientation suitable for Etsy",
+      "legal_enforced": true,
+      "disclosure": "AI Disclosure: This digital product was created with AI assistance (Grok 4.3 / xAI) under original human prompts + heavy curation, original layout, text structures, and value-add. Every element compli...",
+      "generated_for": "AUTON c2667b93"
+    },
+    {
+      "title": "Perimenopause / Menopause Mood Awareness Reflection Prompts | Printable PDF | Digital Download",
+      "description": "High emotional need in Perimenopause / Menopause audience. Specific angle reduces competition. Easy to bundle. High \u2014 pairs well with existing planners/trackers in the same niche.\n\nAI Disclosure: This digital product was created with AI assistance (Grok 4.3 / xAI) under original human prompts + heavy curation, original layout, text structures, and value-add. Every element complies with Etsy and platform policies. For personal use only. Not for resale or redistribution without permission. Wellness Disclaimer: This is not medical, therapeutic, or professional advice. Consult qualified professionals for health, mental health, or business concerns. Results vary. Use at your own discretion.",
+      "tags": [
+        "printable",
+        "digital download",
+        "perimenopause-menopause",
+        "mood-awareness",
+        "planner",
+        "tracker",
+        "journal"
+      ],
+      "price": "$12-19",
+      "image_prompt": "Elegant premium cover or key visual for a Perimenopause / Menopause reflection prompts about mood awareness, clean minimalist design, generous white space, soft sage green and warm beige palette, modern sans typography, subtle botanical or abstract line elements, premium digital product aesthetic, high quality digital product style, square or portrait orientation suitable for Etsy",
+      "legal_enforced": true,
+      "disclosure": "AI Disclosure: This digital product was created with AI assistance (Grok 4.3 / xAI) under original human prompts + heavy curation, original layout, text structures, and value-add. Every element compli...",
+      "generated_for": "AUTON c2667b93"
+    },
+    {
+      "title": "ADHD / Neurodivergent Working Memory Support Journal | Printable PDF | Digital Download",
+      "description": "High emotional need in ADHD / Neurodivergent audience. Specific angle reduces competition. Easy to bundle. High \u2014 pairs well with existing planners/trackers in the same niche.\n\nAI Disclosure: This digital product was created with AI assistance (Grok 4.3 / xAI) under original human prompts + heavy curation, original layout, text structures, and value-add. Every element complies with Etsy and platform policies. For personal use only. Not for resale or redistribution without permission. Wellness Disclaimer: This is not medical, therapeutic, or professional advice. Consult qualified professionals for health, mental health, or business concerns. Results vary. Use at your own discretion.",
+      "tags": [
+        "printable",
+        "digital download",
+        "adhd-neurodivergent",
+        "working-memory-support",
+        "planner",
+        "tracker",
+        "journal"
+      ],
+      "price": "$9-14",
+      "image_prompt": "Elegant premium cover or key visual for a ADHD / Neurodivergent journal about working memory support, clean minimalist design, generous white space, soft sage green and warm beige palette, modern sans typography, subtle botanical or abstract line elements, premium digital product aesthetic, high quality digital product style, square or portrait orientation suitable for Etsy",
+      "legal_enforced": true,
+      "disclosure": "AI Disclosure: This digital product was created with AI assistance (Grok 4.3 / xAI) under original human prompts + heavy curation, original layout, text structures, and value-add. Every element compli...",
+      "generated_for": "AUTON c2667b93"
+    },
+    {
+      "title": "Solopreneur / Creator Income Tracking Planner | Printable PDF | Digital Download",
+      "description": "High emotional need in Solopreneur / Creator audience. Specific angle reduces competition. Easy to bundle. High \u2014 pairs well with existing planners/trackers in the same niche.\n\nAI Disclosure: This digital product was created with AI assistance (Grok 4.3 / xAI) under original human prompts + heavy curation, original layout, text structures, and value-add. Every element complies with Etsy and platform policies. For personal use only. Not for resale or redistribution without permission. Wellness Disclaimer: This is not medical, therapeutic, or professional advice. Consult qualified professionals for health, mental health, or business concerns. Results vary. Use at your own discretion.",
+      "tags": [
+        "printable",
+        "digital download",
+        "solopreneur-creator",
+        "income-tracking",
+        "planner",
+        "tracker",
+        "journal"
+      ],
+      "price": "$12-19",
+      "image_prompt": "Elegant premium cover or key visual for a Solopreneur / Creator planner about income tracking, clean minimalist design, generous white space, soft sage green and warm beige palette, modern sans typography, subtle botanical or abstract line elements, premium digital product aesthetic, high quality digital product style, square or portrait orientation suitable for Etsy",
+      "legal_enforced": true,
+      "disclosure": "AI Disclosure: This digital product was created with AI assistance (Grok 4.3 / xAI) under original human prompts + heavy curation, original layout, text structures, and value-add. Every element compli...",
+      "generated_for": "AUTON c2667b93"
+    },
+    {
+      "title": "Solopreneur / Creator Expense Categorization Tracker | Printable PDF | Digital Download",
+      "description": "High emotional need in Solopreneur / Creator audience. Specific angle reduces competition. Easy to bundle. High \u2014 pairs well with existing planners/trackers in the same niche.\n\nAI Disclosure: This digital product was created with AI assistance (Grok 4.3 / xAI) under original human prompts + heavy curation, original layout, text structures, and value-add. Every element complies with Etsy and platform policies. For personal use only. Not for resale or redistribution without permission. Wellness Disclaimer: This is not medical, therapeutic, or professional advice. Consult qualified professionals for health, mental health, or business concerns. Results vary. Use at your own discretion.",
+      "tags": [
+        "printable",
+        "digital download",
+        "solopreneur-creator",
+        "expense-categorization",
+        "planner",
+        "tracker",
+        "journal"
+      ],
+      "price": "$9-14",
+      "image_prompt": "Elegant premium cover or key visual for a Solopreneur / Creator tracker about expense categorization, clean minimalist design, generous white space, soft sage green and warm beige palette, modern sans typography, subtle botanical or abstract line elements, premium digital product aesthetic, high quality digital product style, square or portrait orientation suitable for Etsy",
+      "legal_enforced": true,
+      "disclosure": "AI Disclosure: This digital product was created with AI assistance (Grok 4.3 / xAI) under original human prompts + heavy curation, original layout, text structures, and value-add. Every element compli...",
+      "generated_for": "AUTON c2667b93"
+    },
+    {
+      "title": "Solopreneur / Creator Pricing Calculator Client Kit | Printable PDF | Digital Download",
+      "description": "High emotional need in Solopreneur / Creator audience. Specific angle reduces competition. Easy to bundle. High \u2014 pairs well with existing planners/trackers in the same niche.\n\nAI Disclosure: This digital product was created with AI assistance (Grok 4.3 / xAI) under original human prompts + heavy curation, original layout, text structures, and value-add. Every element complies with Etsy and platform policies. For personal use only. Not for resale or redistribution without permission. Wellness Disclaimer: This is not medical, therapeutic, or professional advice. Consult qualified professionals for health, mental health, or business concerns. Results vary. Use at your own discretion.",
+      "tags": [
+        "printable",
+        "digital download",
+        "solopreneur-creator",
+        "pricing-calculator",
+        "planner",
+        "tracker",
+        "journal"
+      ],
+      "price": "$12-19",
+      "image_prompt": "Elegant premium cover or key visual for a Solopreneur / Creator client kit about pricing calculator, clean minimalist design, generous white space, soft sage green and warm beige palette, modern sans typography, subtle botanical or abstract line elements, premium digital product aesthetic, high quality digital product style, square or portrait orientation suitable for Etsy",
+      "legal_enforced": true,
+      "disclosure": "AI Disclosure: This digital product was created with AI assistance (Grok 4.3 / xAI) under original human prompts + heavy curation, original layout, text structures, and value-add. Every element compli...",
+      "generated_for": "AUTON c2667b93"
+    },
+    {
+      "title": "Perimenopause / Menopause Symptom Tracking Reflection Prompts | Printable PDF | Digital Download",
+      "description": "High emotional need in Perimenopause / Menopause audience. Specific angle reduces competition. Easy to bundle. High \u2014 pairs well with existing planners/trackers in the same niche.\n\nAI Disclosure: This digital product was created with AI assistance (Grok 4.3 / xAI) under original human prompts + heavy curation, original layout, text structures, and value-add. Every element complies with Etsy and platform policies. For personal use only. Not for resale or redistribution without permission. Wellness Disclaimer: This is not medical, therapeutic, or professional advice. Consult qualified professionals for health, mental health, or business concerns. Results vary. Use at your own discretion.",
+      "tags": [
+        "printable",
+        "digital download",
+        "perimenopause-menopause",
+        "symptom-tracking",
+        "planner",
+        "tracker",
+        "journal"
+      ],
+      "price": "$12-19",
+      "image_prompt": "Elegant premium cover or key visual for a Perimenopause / Menopause reflection prompts about symptom tracking, clean minimalist design, generous white space, soft sage green and warm beige palette, modern sans typography, subtle botanical or abstract line elements, premium digital product aesthetic, high quality digital product style, square or portrait orientation suitable for Etsy",
+      "legal_enforced": true,
+      "disclosure": "AI Disclosure: This digital product was created with AI assistance (Grok 4.3 / xAI) under original human prompts + heavy curation, original layout, text structures, and value-add. Every element compli...",
+      "generated_for": "AUTON c2667b93"
+    },
+    {
+      "title": "Perimenopause / Menopause Relationship Navigation Journal | Printable PDF | Digital Download",
+      "description": "High emotional need in Perimenopause / Menopause audience. Specific angle reduces competition. Easy to bundle. High \u2014 pairs well with existing planners/trackers in the same niche.\n\nAI Disclosure: This digital product was created with AI assistance (Grok 4.3 / xAI) under original human prompts + heavy curation, original layout, text structures, and value-add. Every element complies with Etsy and platform policies. For personal use only. Not for resale or redistribution without permission. Wellness Disclaimer: This is not medical, therapeutic, or professional advice. Consult qualified professionals for health, mental health, or business concerns. Results vary. Use at your own discretion.",
+      "tags": [
+        "printable",
+        "digital download",
+        "perimenopause-menopause",
+        "relationship-navigation",
+        "planner",
+        "tracker",
+        "journal"
+      ],
+      "price": "$9-14",
+      "image_prompt": "Elegant premium cover or key visual for a Perimenopause / Menopause journal about relationship navigation, clean minimalist design, generous white space, soft sage green and warm beige palette, modern sans typography, subtle botanical or abstract line elements, premium digital product aesthetic, high quality digital product style, square or portrait orientation suitable for Etsy",
+      "legal_enforced": true,
+      "disclosure": "AI Disclosure: This digital product was created with AI assistance (Grok 4.3 / xAI) under original human prompts + heavy curation, original layout, text structures, and value-add. Every element compli...",
+      "generated_for": "AUTON c2667b93"
+    },
+    {
+      "title": "ADHD / Neurodivergent Burnout Recovery Tracker | Printable PDF | Digital Download",
+      "description": "High emotional need in ADHD / Neurodivergent audience. Specific angle reduces competition. Easy to bundle. High \u2014 pairs well with existing planners/trackers in the same niche.\n\nAI Disclosure: This digital product was created with AI assistance (Grok 4.3 / xAI) under original human prompts + heavy curation, original layout, text structures, and value-add. Every element complies with Etsy and platform policies. For personal use only. Not for resale or redistribution without permission. Wellness Disclaimer: This is not medical, therapeutic, or professional advice. Consult qualified professionals for health, mental health, or business concerns. Results vary. Use at your own discretion.",
+      "tags": [
+        "printable",
+        "digital download",
+        "adhd-neurodivergent",
+        "burnout-recovery",
+        "planner",
+        "tracker",
+        "journal"
+      ],
+      "price": "$9-14",
+      "image_prompt": "Elegant premium cover or key visual for a ADHD / Neurodivergent tracker about burnout recovery, clean minimalist design, generous white space, soft sage green and warm beige palette, modern sans typography, subtle botanical or abstract line elements, premium digital product aesthetic, high quality digital product style, square or portrait orientation suitable for Etsy",
+      "legal_enforced": true,
+      "disclosure": "AI Disclosure: This digital product was created with AI assistance (Grok 4.3 / xAI) under original human prompts + heavy curation, original layout, text structures, and value-add. Every element compli...",
+      "generated_for": "AUTON c2667b93"
+    },
+    {
+      "title": "ADHD / Neurodivergent Hyperfocus Management Kit | Printable PDF | Digital Download",
+      "description": "High emotional need in ADHD / Neurodivergent audience. Specific angle reduces competition. Easy to bundle. High \u2014 pairs well with existing planners/trackers in the same niche.\n\nAI Disclosure: This digital product was created with AI assistance (Grok 4.3 / xAI) under original human prompts + heavy curation, original layout, text structures, and value-add. Every element complies with Etsy and platform policies. For personal use only. Not for resale or redistribution without permission. Wellness Disclaimer: This is not medical, therapeutic, or professional advice. Consult qualified professionals for health, mental health, or business concerns. Results vary. Use at your own discretion.",
+      "tags": [
+        "printable",
+        "digital download",
+        "adhd-neurodivergent",
+        "hyperfocus-management",
+        "planner",
+        "tracker",
+        "journal"
+      ],
+      "price": "$12-19",
+      "image_prompt": "Elegant premium cover or key visual for a ADHD / Neurodivergent kit about hyperfocus management, clean minimalist design, generous white space, soft sage green and warm beige palette, modern sans typography, subtle botanical or abstract line elements, premium digital product aesthetic, high quality digital product style, square or portrait orientation suitable for Etsy",
+      "legal_enforced": true,
+      "disclosure": "AI Disclosure: This digital product was created with AI assistance (Grok 4.3 / xAI) under original human prompts + heavy curation, original layout, text structures, and value-add. Every element compli...",
+      "generated_for": "AUTON c2667b93"
+    },
+    {
+      "title": "Perimenopause / Menopause Energy Management Journal | Printable PDF | Digital Download",
+      "description": "High emotional need in Perimenopause / Menopause audience. Specific angle reduces competition. Easy to bundle. High \u2014 pairs well with existing planners/trackers in the same niche.\n\nAI Disclosure: This digital product was created with AI assistance (Grok 4.3 / xAI) under original human prompts + heavy curation, original layout, text structures, and value-add. Every element complies with Etsy and platform policies. For personal use only. Not for resale or redistribution without permission. Wellness Disclaimer: This is not medical, therapeutic, or professional advice. Consult qualified professionals for health, mental health, or business concerns. Results vary. Use at your own discretion.",
+      "tags": [
+        "printable",
+        "digital download",
+        "perimenopause-menopause",
+        "energy-management",
+        "planner",
+        "tracker",
+        "journal"
+      ],
+      "price": "$9-14",
+      "image_prompt": "Elegant premium cover or key visual for a Perimenopause / Menopause journal about energy management, clean minimalist design, generous white space, soft sage green and warm beige palette, modern sans typography, subtle botanical or abstract line elements, premium digital product aesthetic, high quality digital product style, square or portrait orientation suitable for Etsy",
+      "legal_enforced": true,
+      "disclosure": "AI Disclosure: This digital product was created with AI assistance (Grok 4.3 / xAI) under original human prompts + heavy curation, original layout, text structures, and value-add. Every element compli...",
+      "generated_for": "AUTON c2667b93"
+    },
+    {
+      "title": "Solopreneur / Creator Content Batching Tracker | Printable PDF | Digital Download",
+      "description": "High emotional need in Solopreneur / Creator audience. Specific angle reduces competition. Easy to bundle. High \u2014 pairs well with existing planners/trackers in the same niche.\n\nAI Disclosure: This digital product was created with AI assistance (Grok 4.3 / xAI) under original human prompts + heavy curation, original layout, text structures, and value-add. Every element complies with Etsy and platform policies. For personal use only. Not for resale or redistribution without permission. Wellness Disclaimer: This is not medical, therapeutic, or professional advice. Consult qualified professionals for health, mental health, or business concerns. Results vary. Use at your own discretion.",
+      "tags": [
+        "printable",
+        "digital download",
+        "solopreneur-creator",
+        "content-batching",
+        "planner",
+        "tracker",
+        "journal"
+      ],
+      "price": "$9-14",
+      "image_prompt": "Elegant premium cover or key visual for a Solopreneur / Creator tracker about content batching, clean minimalist design, generous white space, soft sage green and warm beige palette, modern sans typography, subtle botanical or abstract line elements, premium digital product aesthetic, high quality digital product style, square or portrait orientation suitable for Etsy",
+      "legal_enforced": true,
+      "disclosure": "AI Disclosure: This digital product was created with AI assistance (Grok 4.3 / xAI) under original human prompts + heavy curation, original layout, text structures, and value-add. Every element compli...",
+      "generated_for": "AUTON c2667b93"
+    },
+    {
+      "title": "Solopreneur / Creator Quarterly Planning Content Calendar | Printable PDF | Digital Download",
+      "description": "High emotional need in Solopreneur / Creator audience. Specific angle reduces competition. Easy to bundle. High \u2014 pairs well with existing planners/trackers in the same niche.\n\nAI Disclosure: This digital product was created with AI assistance (Grok 4.3 / xAI) under original human prompts + heavy curation, original layout, text structures, and value-add. Every element complies with Etsy and platform policies. For personal use only. Not for resale or redistribution without permission. Wellness Disclaimer: This is not medical, therapeutic, or professional advice. Consult qualified professionals for health, mental health, or business concerns. Results vary. Use at your own discretion.",
+      "tags": [
+        "printable",
+        "digital download",
+        "solopreneur-creator",
+        "quarterly-planning",
+        "planner",
+        "tracker",
+        "journal"
+      ],
+      "price": "$12-19",
+      "image_prompt": "Elegant premium cover or key visual for a Solopreneur / Creator content calendar about quarterly planning, clean minimalist design, generous white space, soft sage green and warm beige palette, modern sans typography, subtle botanical or abstract line elements, premium digital product aesthetic, high quality digital product style, square or portrait orientation suitable for Etsy",
+      "legal_enforced": true,
+      "disclosure": "AI Disclosure: This digital product was created with AI assistance (Grok 4.3 / xAI) under original human prompts + heavy curation, original layout, text structures, and value-add. Every element compli...",
+      "generated_for": "AUTON c2667b93"
+    },
+    {
+      "title": "Solopreneur / Creator Expense Categorization Client Kit | Printable PDF | Digital Download",
+      "description": "High emotional need in Solopreneur / Creator audience. Specific angle reduces competition. Easy to bundle. High \u2014 pairs well with existing planners/trackers in the same niche.\n\nAI Disclosure: This digital product was created with AI assistance (Grok 4.3 / xAI) under original human prompts + heavy curation, original layout, text structures, and value-add. Every element complies with Etsy and platform policies. For personal use only. Not for resale or redistribution without permission. Wellness Disclaimer: This is not medical, therapeutic, or professional advice. Consult qualified professionals for health, mental health, or business concerns. Results vary. Use at your own discretion.",
+      "tags": [
+        "printable",
+        "digital download",
+        "solopreneur-creator",
+        "expense-categorization",
+        "planner",
+        "tracker",
+        "journal"
+      ],
+      "price": "$12-19",
+      "image_prompt": "Elegant premium cover or key visual for a Solopreneur / Creator client kit about expense categorization, clean minimalist design, generous white space, soft sage green and warm beige palette, modern sans typography, subtle botanical or abstract line elements, premium digital product aesthetic, high quality digital product style, square or portrait orientation suitable for Etsy",
+      "legal_enforced": true,
+      "disclosure": "AI Disclosure: This digital product was created with AI assistance (Grok 4.3 / xAI) under original human prompts + heavy curation, original layout, text structures, and value-add. Every element compli...",
+      "generated_for": "AUTON c2667b93"
+    },
+    {
+      "title": "Perimenopause / Menopause Doctor Visit Prep Journal | Printable PDF | Digital Download",
+      "description": "High emotional need in Perimenopause / Menopause audience. Specific angle reduces competition. Easy to bundle. High \u2014 pairs well with existing planners/trackers in the same niche.\n\nAI Disclosure: This digital product was created with AI assistance (Grok 4.3 / xAI) under original human prompts + heavy curation, original layout, text structures, and value-add. Every element complies with Etsy and platform policies. For personal use only. Not for resale or redistribution without permission. Wellness Disclaimer: This is not medical, therapeutic, or professional advice. Consult qualified professionals for health, mental health, or business concerns. Results vary. Use at your own discretion.",
+      "tags": [
+        "printable",
+        "digital download",
+        "perimenopause-menopause",
+        "doctor-visit-prep",
+        "planner",
+        "tracker",
+        "journal"
+      ],
+      "price": "$9-14",
+      "image_prompt": "Elegant premium cover or key visual for a Perimenopause / Menopause journal about doctor visit prep, clean minimalist design, generous white space, soft sage green and warm beige palette, modern sans typography, subtle botanical or abstract line elements, premium digital product aesthetic, high quality digital product style, square or portrait orientation suitable for Etsy",
+      "legal_enforced": true,
+      "disclosure": "AI Disclosure: This digital product was created with AI assistance (Grok 4.3 / xAI) under original human prompts + heavy curation, original layout, text structures, and value-add. Every element compli...",
+      "generated_for": "AUTON c2667b93"
+    },
+    {
+      "title": "Perimenopause / Menopause Sleep Optimization Journal | Printable PDF | Digital Download",
+      "description": "High emotional need in Perimenopause / Menopause audience. Specific angle reduces competition. Easy to bundle. High \u2014 pairs well with existing planners/trackers in the same niche.\n\nAI Disclosure: This digital product was created with AI assistance (Grok 4.3 / xAI) under original human prompts + heavy curation, original layout, text structures, and value-add. Every element complies with Etsy and platform policies. For personal use only. Not for resale or redistribution without permission. Wellness Disclaimer: This is not medical, therapeutic, or professional advice. Consult qualified professionals for health, mental health, or business concerns. Results vary. Use at your own discretion.",
+      "tags": [
+        "printable",
+        "digital download",
+        "perimenopause-menopause",
+        "sleep-optimization",
+        "planner",
+        "tracker",
+        "journal"
+      ],
+      "price": "$9-14",
+      "image_prompt": "Elegant premium cover or key visual for a Perimenopause / Menopause journal about sleep optimization, clean minimalist design, generous white space, soft sage green and warm beige palette, modern sans typography, subtle botanical or abstract line elements, premium digital product aesthetic, high quality digital product style, square or portrait orientation suitable for Etsy",
+      "legal_enforced": true,
+      "disclosure": "AI Disclosure: This digital product was created with AI assistance (Grok 4.3 / xAI) under original human prompts + heavy curation, original layout, text structures, and value-add. Every element compli...",
+      "generated_for": "AUTON c2667b93"
+    },
+    {
+      "title": "Perimenopause / Menopause Nervous System Support Reflection Prompts | Printable PDF | Digital Download",
+      "description": "High emotional need in Perimenopause / Menopause audience. Specific angle reduces competition. Easy to bundle. High \u2014 pairs well with existing planners/trackers in the same niche.\n\nAI Disclosure: This digital product was created with AI assistance (Grok 4.3 / xAI) under original human prompts + heavy curation, original layout, text structures, and value-add. Every element complies with Etsy and platform policies. For personal use only. Not for resale or redistribution without permission. Wellness Disclaimer: This is not medical, therapeutic, or professional advice. Consult qualified professionals for health, mental health, or business concerns. Results vary. Use at your own discretion.",
+      "tags": [
+        "printable",
+        "digital download",
+        "perimenopause-menopause",
+        "nervous-system-support",
+        "planner",
+        "tracker",
+        "journal"
+      ],
+      "price": "$12-19",
+      "image_prompt": "Elegant premium cover or key visual for a Perimenopause / Menopause reflection prompts about nervous system support, clean minimalist design, generous white space, soft sage green and warm beige palette, modern sans typography, subtle botanical or abstract line elements, premium digital product aesthetic, high quality digital product style, square or portrait orientation suitable for Etsy",
+      "legal_enforced": true,
+      "disclosure": "AI Disclosure: This digital product was created with AI assistance (Grok 4.3 / xAI) under original human prompts + heavy curation, original layout, text structures, and value-add. Every element compli...",
+      "generated_for": "AUTON c2667b93"
+    },
+    {
+      "title": "Solopreneur / Creator Energy Management For Business Financial System | Printable PDF | Digital Download",
+      "description": "High emotional need in Solopreneur / Creator audience. Specific angle reduces competition. Easy to bundle. High \u2014 pairs well with existing planners/trackers in the same niche.\n\nAI Disclosure: This digital product was created with AI assistance (Grok 4.3 / xAI) under original human prompts + heavy curation, original layout, text structures, and value-add. Every element complies with Etsy and platform policies. For personal use only. Not for resale or redistribution without permission. Wellness Disclaimer: This is not medical, therapeutic, or professional advice. Consult qualified professionals for health, mental health, or business concerns. Results vary. Use at your own discretion.",
+      "tags": [
+        "printable",
+        "digital download",
+        "solopreneur-creator",
+        "energy-management-for-business",
+        "planner",
+        "tracker",
+        "journal"
+      ],
+      "price": "$12-19",
+      "image_prompt": "Elegant premium cover or key visual for a Solopreneur / Creator financial system about energy management for business, clean minimalist design, generous white space, soft sage green and warm beige palette, modern sans typography, subtle botanical or abstract line elements, premium digital product aesthetic, high quality digital product style, square or portrait orientation suitable for Etsy",
+      "legal_enforced": true,
+      "disclosure": "AI Disclosure: This digital product was created with AI assistance (Grok 4.3 / xAI) under original human prompts + heavy curation, original layout, text structures, and value-add. Every element compli...",
+      "generated_for": "AUTON c2667b93"
+    },
+    {
+      "title": "\"Calm & Focus\" Minimalist Printable Wall Art Collection (8 designs) | Printable PDF | Digital Download",
+      "description": "Fast to produce, high perceived value, excellent Pinterest performance, cross-sells with everything. Bundle 2-3 collections or with planners.\n\nAI Disclosure: This digital product was created with AI assistance (Grok 4.3 / xAI) under original human prompts + heavy curation, original layout, text structures, and value-add. Every element complies with Etsy and platform policies. For personal use only. Not for resale or redistribution without permission. Wellness Disclaimer: This is not medical, therapeutic, or professional advice. Consult qualified professionals for health, mental health, or business concerns. Results vary. Use at your own discretion.",
+      "tags": [
+        "printable",
+        "digital download",
+        "wall art-decor",
+        "Calm-&-Focus",
+        "planner",
+        "tracker",
+        "journal"
+      ],
+      "price": "$9-12",
+      "image_prompt": "Premium minimalist abstract printable wall art for calm & focus, abstract minimalist wall art style, soft organic shapes, gentle gradients in earthy sage, warm taupe and cream, therapeutic calm aesthetic, no text or minimal elegant typography, high resolution, print-ready, cohesive collection feel --ar 4:3 or 2:3",
+      "legal_enforced": true,
+      "disclosure": "AI Disclosure: This digital product was created with AI assistance (Grok 4.3 / xAI) under original human prompts + heavy curation, original layout, text structures, and value-add. Every element compli...",
+      "generated_for": "AUTON c2667b93"
+    },
+    {
+      "title": "\"Grounded Presence\" Minimalist Printable Wall Art Collection (8 designs) | Printable PDF | Digital Download",
+      "description": "Fast to produce, high perceived value, excellent Pinterest performance, cross-sells with everything. Bundle 2-3 collections or with planners.\n\nAI Disclosure: This digital product was created with AI assistance (Grok 4.3 / xAI) under original human prompts + heavy curation, original layout, text structures, and value-add. Every element complies with Etsy and platform policies. For personal use only. Not for resale or redistribution without permission. Wellness Disclaimer: This is not medical, therapeutic, or professional advice. Consult qualified professionals for health, mental health, or business concerns. Results vary. Use at your own discretion.",
+      "tags": [
+        "printable",
+        "digital download",
+        "wall art-decor",
+        "Grounded-Presence",
+        "planner",
+        "tracker",
+        "journal"
+      ],
+      "price": "$9-12",
+      "image_prompt": "Premium minimalist abstract printable wall art for grounded presence, abstract minimalist wall art style, soft organic shapes, gentle gradients in earthy sage, warm taupe and cream, therapeutic calm aesthetic, no text or minimal elegant typography, high resolution, print-ready, cohesive collection feel --ar 4:3 or 2:3",
+      "legal_enforced": true,
+      "disclosure": "AI Disclosure: This digital product was created with AI assistance (Grok 4.3 / xAI) under original human prompts + heavy curation, original layout, text structures, and value-add. Every element compli...",
+      "generated_for": "AUTON c2667b93"
+    },
+    {
+      "title": "\"Embodied Self\" Minimalist Printable Wall Art Collection (8 designs) | Printable PDF | Digital Download",
+      "description": "Fast to produce, high perceived value, excellent Pinterest performance, cross-sells with everything. Bundle 2-3 collections or with planners.\n\nAI Disclosure: This digital product was created with AI assistance (Grok 4.3 / xAI) under original human prompts + heavy curation, original layout, text structures, and value-add. Every element complies with Etsy and platform policies. For personal use only. Not for resale or redistribution without permission. Wellness Disclaimer: This is not medical, therapeutic, or professional advice. Consult qualified professionals for health, mental health, or business concerns. Results vary. Use at your own discretion.",
+      "tags": [
+        "printable",
+        "digital download",
+        "wall art-decor",
+        "Embodied-Self",
+        "planner",
+        "tracker",
+        "journal"
+      ],
+      "price": "$9-12",
+      "image_prompt": "Premium minimalist abstract printable wall art for embodied self, abstract minimalist wall art style, soft organic shapes, gentle gradients in earthy sage, warm taupe and cream, therapeutic calm aesthetic, no text or minimal elegant typography, high resolution, print-ready, cohesive collection feel --ar 4:3 or 2:3",
+      "legal_enforced": true,
+      "disclosure": "AI Disclosure: This digital product was created with AI assistance (Grok 4.3 / xAI) under original human prompts + heavy curation, original layout, text structures, and value-add. Every element compli...",
+      "generated_for": "AUTON c2667b93"
+    },
+    {
+      "title": "\"Morning Light\" Minimalist Printable Wall Art Collection (8 designs) | Printable PDF | Digital Download",
+      "description": "Fast to produce, high perceived value, excellent Pinterest performance, cross-sells with everything. Bundle 2-3 collections or with planners.\n\nAI Disclosure: This digital product was created with AI assistance (Grok 4.3 / xAI) under original human prompts + heavy curation, original layout, text structures, and value-add. Every element complies with Etsy and platform policies. For personal use only. Not for resale or redistribution without permission. Wellness Disclaimer: This is not medical, therapeutic, or professional advice. Consult qualified professionals for health, mental health, or business concerns. Results vary. Use at your own discretion.",
+      "tags": [
+        "printable",
+        "digital download",
+        "wall art-decor",
+        "Morning-Light",
+        "planner",
+        "tracker",
+        "journal"
+      ],
+      "price": "$9-12",
+      "image_prompt": "Premium minimalist abstract printable wall art for morning light, abstract minimalist wall art style, soft organic shapes, gentle gradients in earthy sage, warm taupe and cream, therapeutic calm aesthetic, no text or minimal elegant typography, high resolution, print-ready, cohesive collection feel --ar 4:3 or 2:3",
+      "legal_enforced": true,
+      "disclosure": "AI Disclosure: This digital product was created with AI assistance (Grok 4.3 / xAI) under original human prompts + heavy curation, original layout, text structures, and value-add. Every element compli...",
+      "generated_for": "AUTON c2667b93"
+    },
+    {
+      "title": "\"Gentle Strength\" Minimalist Printable Wall Art Collection (8 designs) | Printable PDF | Digital Download",
+      "description": "Fast to produce, high perceived value, excellent Pinterest performance, cross-sells with everything. Bundle 2-3 collections or with planners.\n\nAI Disclosure: This digital product was created with AI assistance (Grok 4.3 / xAI) under original human prompts + heavy curation, original layout, text structures, and value-add. Every element complies with Etsy and platform policies. For personal use only. Not for resale or redistribution without permission. Wellness Disclaimer: This is not medical, therapeutic, or professional advice. Consult qualified professionals for health, mental health, or business concerns. Results vary. Use at your own discretion.",
+      "tags": [
+        "printable",
+        "digital download",
+        "wall art-decor",
+        "Gentle-Strength",
+        "planner",
+        "tracker",
+        "journal"
+      ],
+      "price": "$9-12",
+      "image_prompt": "Premium minimalist abstract printable wall art for gentle strength, abstract minimalist wall art style, soft organic shapes, gentle gradients in earthy sage, warm taupe and cream, therapeutic calm aesthetic, no text or minimal elegant typography, high resolution, print-ready, cohesive collection feel --ar 4:3 or 2:3",
+      "legal_enforced": true,
+      "disclosure": "AI Disclosure: This digital product was created with AI assistance (Grok 4.3 / xAI) under original human prompts + heavy curation, original layout, text structures, and value-add. Every element compli...",
+      "generated_for": "AUTON c2667b93"
+    }
+  ]
+}
