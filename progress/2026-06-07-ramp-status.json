@@ -1,0 +1,30 @@
+{
+  "date": "2026-06-07",
+  "auton": "c2667b93",
+  "phase": "1-2-ramp",
+  "metrics": {
+    "ideas": 30,
+    "batch_listings": 30,
+    "assets_integrated": 26,
+    "packages": 12,
+    "seed_etsy_listings": 3,
+    "target_listings_day90": 150,
+    "revenue_goal_90d": 40000,
+    "budget_cap_monthly": 200
+  },
+  "paths": {
+    "local": "/home/Irikash/ClarityForge_Digital",
+    "clone": "/tmp/clarityforge-digital",
+    "xlsx": "Command_Center_c2667b93.xlsx",
+    "batch": "launch-kit/c2667b93_batch_ready.json",
+    "manifest": "launch-kit/asset_manifest_c2667b93.json",
+    "packages": "launch-kit/PACKAGES_c2667b93.json"
+  },
+  "automation": {
+    "scheduler": "scripts/recurring_pump.sh",
+    "mcp": "grok_com_github push_files",
+    "subagents": true
+  },
+  "legal_enforced": true,
+  "next": ["mcp_push", "etsy_upload_first_8", "pinterest_batch"]
+}

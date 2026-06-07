@@ -1,0 +1,19 @@
+{
+  "auton": "c2667b93",
+  "generated_at": "2026-06-07T23:59:00Z",
+  "legal_note": "All bundle descriptions must append full disclosure from batch_asset_prompts.py",
+  "packages": [
+    {"id": "PKG-001", "title": "Perimenopause Solopreneur Nervous System Operating System Bundle", "price": "$34-49", "aov_target": 42, "hero_asset": "01_crossover_nervous_system_operating_system_bundle.jpg", "includes": ["NS Support Prompts", "Energy Content Calendar", "Mood Awareness", "Sleep Journal", "Pinterest pin"], "tags": ["perimenopause", "solopreneur", "bundle"]},
+    {"id": "PKG-002", "title": "ADHD Executive Function Starter Pack", "price": "$28-39", "aov_target": 32, "hero_asset": "03_adhd_task_initiation_challenge_cover.jpg", "includes": ["Task Initiation", "Working Memory Journal", "Hyperfocus Kit"], "tags": ["adhd", "executive function", "bundle"]},
+    {"id": "PKG-003", "title": "Hormone-Aware Solopreneur Business + Symptom Log", "price": "$32-45", "aov_target": 38, "hero_asset": "13_crossover_hormone_aware_solopreneur_bundle.jpg", "includes": ["Quarterly Planning", "Lifestyle Experiments", "Client Pipeline"], "tags": ["perimenopause", "solopreneur", "hormone aware"]},
+    {"id": "PKG-004", "title": "Midlife Energy Journal for Solopreneurs", "price": "$24-34", "aov_target": 28, "hero_asset": "16_crossover_peri_energy_solopreneur_journal.jpg", "includes": ["Energy Journal", "Content Batching", "Energy Financial System"], "tags": ["perimenopause", "energy", "solopreneur"]},
+    {"id": "PKG-005", "title": "ADHD Emotional Regulation & Burnout Recovery Duo", "price": "$22-32", "aov_target": 26, "hero_asset": "02_adhd_rejection_sensitivity_challenge_cover.jpg", "includes": ["Rejection Sensitivity", "Burnout Recovery"], "tags": ["adhd", "burnout"]},
+    {"id": "PKG-006", "title": "Perimenopause Wellness Core Trio", "price": "$26-36", "aov_target": 30, "hero_asset": "07_perimenopause_nervous_system_support_cover.jpg", "includes": ["Mood Awareness", "Sleep Optimization", "NS Support"], "tags": ["perimenopause", "wellness"]},
+    {"id": "PKG-007", "title": "Calm Focus Wall Art + ADHD Planner Mini Bundle", "price": "$18-26", "aov_target": 22, "hero_asset": "11_wall_art_calm_and_focus_2x3.jpg", "includes": ["Calm & Focus art", "Hyperfocus Kit", "Task Initiation"], "tags": ["wall art", "adhd"]},
+    {"id": "PKG-008", "title": "Solopreneur Revenue & Pipeline Pack", "price": "$24-35", "aov_target": 28, "hero_asset": "20_solopreneur_client_pipeline_adhd_friendly_cover.jpg", "includes": ["Client Pipeline", "Tax Prep", "Content Batching"], "tags": ["solopreneur", "business"]},
+    {"id": "PKG-009", "title": "Therapeutic Wall Art Collection Sampler (5 themes)", "price": "$19-29", "aov_target": 24, "hero_asset": "14_wall_art_grounded_presence_2x3.jpg", "includes": ["5 wall art heroes from batch"], "tags": ["wall art", "minimalist"]},
+    {"id": "PKG-010", "title": "Pinterest Traffic Starter", "price": "$15-22", "aov_target": 18, "hero_asset": "12_pinterest_peri_solo_mood_energy_pin_9x16.jpg", "includes": ["Vertical pin", "3 listing heroes"], "tags": ["pinterest", "marketing"]},
+    {"id": "PKG-011", "title": "Perimenopause Lifestyle Lab", "price": "$28-38", "aov_target": 32, "hero_asset": "04_perimenopause_lifestyle_experiments_cover.jpg", "includes": ["Lifestyle Experiments", "Mood", "Energy Journal"], "tags": ["perimenopause", "lifestyle"]},
+    {"id": "PKG-012", "title": "Nervous System Quick Start Lead Magnet", "price": "$0 / $14 upsell", "aov_target": 14, "hero_asset": "01_crossover_nervous_system_operating_system_bundle.jpg", "includes": ["3-page PDF", "Upsell PKG-001"], "tags": ["lead magnet", "email"]}
+  ]
+}
