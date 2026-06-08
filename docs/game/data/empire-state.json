@@ -1,0 +1,586 @@
+{
+  "generated_at": "2026-06-08T01:59:46Z",
+  "auton_trace": [
+    "c2667b93",
+    "947d2fc5"
+  ],
+  "metrics": {
+    "ideas": 30,
+    "batch_listings": 30,
+    "assets_integrated": 26,
+    "packages": 12,
+    "seed_etsy_listings": 3,
+    "target_listings_day90": 150,
+    "revenue_goal_90d": 40000,
+    "budget_cap_monthly": 200,
+    "phase": "1-2-ramp",
+    "empire_score": 29,
+    "pump_runs_detected": 0,
+    "legal_enforced_sample": true
+  },
+  "scenario_bands": {
+    "base": 80,
+    "aggressive": 150,
+    "moonshot": 250
+  },
+  "acts": [
+    {
+      "id": 1,
+      "slug": "clearing",
+      "name": "The Clearing",
+      "plan_days": "1-14",
+      "unlocked": true,
+      "progress_pct": 82,
+      "unlock_requirements": {
+        "type": "always"
+      }
+    },
+    {
+      "id": 2,
+      "slug": "crossroads",
+      "name": "The Crossroads",
+      "plan_days": "15-45",
+      "unlocked": false,
+      "progress_pct": 88,
+      "unlock_requirements": {
+        "type": "metric",
+        "batch_listings": 50,
+        "assets_integrated": 20
+      }
+    },
+    {
+      "id": 3,
+      "slug": "harvest",
+      "name": "The Harvest",
+      "plan_days": "46-90",
+      "unlocked": false,
+      "progress_pct": 30,
+      "unlock_requirements": {
+        "type": "metric",
+        "batch_listings": 100
+      }
+    },
+    {
+      "id": 4,
+      "slug": "eternal-forge",
+      "name": "Eternal Forge",
+      "plan_days": "90+",
+      "unlocked": false,
+      "progress_pct": 20,
+      "unlock_requirements": {
+        "type": "metric",
+        "batch_listings": 150
+      }
+    }
+  ],
+  "loot_deck": [
+    {
+      "id": "listing-001",
+      "title": "Solopreneur / Creator Content Batching Tracker | Printable PDF | Digital Download",
+      "price": "$9-14",
+      "niche": "solopreneur-creator",
+      "image_prompt_preview": "Elegant premium cover or key visual for a Solopreneur / Creator tracker about content batching, clean minimalist design, generous white spac…",
+      "legal_enforced": true,
+      "source_file": "launch-kit/c2667b93_batch_ready.json",
+      "hero_asset_hint": "05_solopreneur_energy_content_calendar_cover.jpg"
+    },
+    {
+      "id": "listing-002",
+      "title": "ADHD / Neurodivergent Task Initiation Challenge | Printable PDF | Digital Download",
+      "price": "$12-19",
+      "niche": "adhd-neurodivergent",
+      "image_prompt_preview": "Elegant premium cover or key visual for a ADHD / Neurodivergent challenge about task initiation, clean minimalist design, generous white spa…",
+      "legal_enforced": true,
+      "source_file": "launch-kit/c2667b93_batch_ready.json",
+      "hero_asset_hint": "03_adhd_task_initiation_challenge_cover.jpg"
+    },
+    {
+      "id": "listing-003",
+      "title": "Solopreneur / Creator Tax Prep Made Simple Planner | Printable PDF | Digital Download",
+      "price": "$12-19",
+      "niche": "solopreneur-creator",
+      "image_prompt_preview": "Elegant premium cover or key visual for a Solopreneur / Creator planner about tax prep made simple, clean minimalist design, generous white…",
+      "legal_enforced": true,
+      "source_file": "launch-kit/c2667b93_batch_ready.json",
+      "hero_asset_hint": null
+    },
+    {
+      "id": "listing-004",
+      "title": "Solopreneur / Creator Quarterly Planning Invoice Pack | Printable PDF | Digital Download",
+      "price": "$12-19",
+      "niche": "solopreneur-creator",
+      "image_prompt_preview": "Elegant premium cover or key visual for a Solopreneur / Creator invoice pack about quarterly planning, clean minimalist design, generous whi…",
+      "legal_enforced": true,
+      "source_file": "launch-kit/c2667b93_batch_ready.json",
+      "hero_asset_hint": null
+    },
+    {
+      "id": "listing-005",
+      "title": "Perimenopause / Menopause Lifestyle Experiments Wellness Guide | Printable PDF | Digital Download",
+      "price": "$12-19",
+      "niche": "perimenopause-menopause",
+      "image_prompt_preview": "Elegant premium cover or key visual for a Perimenopause / Menopause wellness guide about lifestyle experiments, clean minimalist design, gen…",
+      "legal_enforced": true,
+      "source_file": "launch-kit/c2667b93_batch_ready.json",
+      "hero_asset_hint": "04_perimenopause_lifestyle_experiments_cover.jpg"
+    },
+    {
+      "id": "listing-006",
+      "title": "ADHD / Neurodivergent Rejection Sensitivity Challenge | Printable PDF | Digital Download",
+      "price": "$12-19",
+      "niche": "adhd-neurodivergent",
+      "image_prompt_preview": "Elegant premium cover or key visual for a ADHD / Neurodivergent challenge about rejection sensitivity, clean minimalist design, generous whi…",
+      "legal_enforced": true,
+      "source_file": "launch-kit/c2667b93_batch_ready.json",
+      "hero_asset_hint": "02_adhd_rejection_sensitivity_challenge_cover.jpg"
+    },
+    {
+      "id": "listing-007",
+      "title": "Solopreneur / Creator Client Pipeline Tracker | Printable PDF | Digital Download",
+      "price": "$9-14",
+      "niche": "solopreneur-creator",
+      "image_prompt_preview": "Elegant premium cover or key visual for a Solopreneur / Creator tracker about client pipeline, clean minimalist design, generous white space…",
+      "legal_enforced": true,
+      "source_file": "launch-kit/c2667b93_batch_ready.json",
+      "hero_asset_hint": "20_solopreneur_client_pipeline_adhd_friendly_cover.jpg"
+    },
+    {
+      "id": "listing-008",
+      "title": "Solopreneur / Creator Energy Management For Business Content Calendar | Printable PDF | Digital Download",
+      "price": "$12-19",
+      "niche": "solopreneur-creator",
+      "image_prompt_preview": "Elegant premium cover or key visual for a Solopreneur / Creator content calendar about energy management for business, clean minimalist desi…",
+      "legal_enforced": true,
+      "source_file": "launch-kit/c2667b93_batch_ready.json",
+      "hero_asset_hint": "05_solopreneur_energy_content_calendar_cover.jpg"
+    },
+    {
+      "id": "listing-009",
+      "title": "Perimenopause / Menopause Mood Awareness Reflection Prompts | Printable PDF | Digital Download",
+      "price": "$12-19",
+      "niche": "perimenopause-menopause",
+      "image_prompt_preview": "Elegant premium cover or key visual for a Perimenopause / Menopause reflection prompts about mood awareness, clean minimalist design, genero…",
+      "legal_enforced": true,
+      "source_file": "launch-kit/c2667b93_batch_ready.json",
+      "hero_asset_hint": "06_perimenopause_mood_awareness_cover.jpg"
+    },
+    {
+      "id": "listing-010",
+      "title": "ADHD / Neurodivergent Working Memory Support Journal | Printable PDF | Digital Download",
+      "price": "$9-14",
+      "niche": "adhd-neurodivergent",
+      "image_prompt_preview": "Elegant premium cover or key visual for a ADHD / Neurodivergent journal about working memory support, clean minimalist design, generous whit…",
+      "legal_enforced": true,
+      "source_file": "launch-kit/c2667b93_batch_ready.json",
+      "hero_asset_hint": "08_adhd_working_memory_journal_cover.jpg"
+    },
+    {
+      "id": "listing-011",
+      "title": "Solopreneur / Creator Income Tracking Planner | Printable PDF | Digital Download",
+      "price": "$12-19",
+      "niche": "solopreneur-creator",
+      "image_prompt_preview": "Elegant premium cover or key visual for a Solopreneur / Creator planner about income tracking, clean minimalist design, generous white space…",
+      "legal_enforced": true,
+      "source_file": "launch-kit/c2667b93_batch_ready.json",
+      "hero_asset_hint": null
+    },
+    {
+      "id": "listing-012",
+      "title": "Solopreneur / Creator Expense Categorization Tracker | Printable PDF | Digital Download",
+      "price": "$9-14",
+      "niche": "solopreneur-creator",
+      "image_prompt_preview": "Elegant premium cover or key visual for a Solopreneur / Creator tracker about expense categorization, clean minimalist design, generous whit…",
+      "legal_enforced": true,
+      "source_file": "launch-kit/c2667b93_batch_ready.json",
+      "hero_asset_hint": null
+    },
+    {
+      "id": "listing-013",
+      "title": "Solopreneur / Creator Pricing Calculator Client Kit | Printable PDF | Digital Download",
+      "price": "$12-19",
+      "niche": "solopreneur-creator",
+      "image_prompt_preview": "Elegant premium cover or key visual for a Solopreneur / Creator client kit about pricing calculator, clean minimalist design, generous white…",
+      "legal_enforced": true,
+      "source_file": "launch-kit/c2667b93_batch_ready.json",
+      "hero_asset_hint": "20_solopreneur_client_pipeline_adhd_friendly_cover.jpg"
+    },
+    {
+      "id": "listing-014",
+      "title": "Perimenopause / Menopause Symptom Tracking Reflection Prompts | Printable PDF | Digital Download",
+      "price": "$12-19",
+      "niche": "perimenopause-menopause",
+      "image_prompt_preview": "Elegant premium cover or key visual for a Perimenopause / Menopause reflection prompts about symptom tracking, clean minimalist design, gene…",
+      "legal_enforced": true,
+      "source_file": "launch-kit/c2667b93_batch_ready.json",
+      "hero_asset_hint": null
+    },
+    {
+      "id": "listing-015",
+      "title": "Perimenopause / Menopause Relationship Navigation Journal | Printable PDF | Digital Download",
+      "price": "$9-14",
+      "niche": "perimenopause-menopause",
+      "image_prompt_preview": "Elegant premium cover or key visual for a Perimenopause / Menopause journal about relationship navigation, clean minimalist design, generous…",
+      "legal_enforced": true,
+      "source_file": "launch-kit/c2667b93_batch_ready.json",
+      "hero_asset_hint": null
+    },
+    {
+      "id": "listing-016",
+      "title": "ADHD / Neurodivergent Burnout Recovery Tracker | Printable PDF | Digital Download",
+      "price": "$9-14",
+      "niche": "adhd-neurodivergent",
+      "image_prompt_preview": "Elegant premium cover or key visual for a ADHD / Neurodivergent tracker about burnout recovery, clean minimalist design, generous white spac…",
+      "legal_enforced": true,
+      "source_file": "launch-kit/c2667b93_batch_ready.json",
+      "hero_asset_hint": "09_adhd_burnout_recovery_tracker_cover.jpg"
+    },
+    {
+      "id": "listing-017",
+      "title": "ADHD / Neurodivergent Hyperfocus Management Kit | Printable PDF | Digital Download",
+      "price": "$12-19",
+      "niche": "adhd-neurodivergent",
+      "image_prompt_preview": "Elegant premium cover or key visual for a ADHD / Neurodivergent kit about hyperfocus management, clean minimalist design, generous white spa…",
+      "legal_enforced": true,
+      "source_file": "launch-kit/c2667b93_batch_ready.json",
+      "hero_asset_hint": "10_adhd_hyperfocus_management_kit_cover.jpg"
+    },
+    {
+      "id": "listing-018",
+      "title": "Perimenopause / Menopause Energy Management Journal | Printable PDF | Digital Download",
+      "price": "$9-14",
+      "niche": "perimenopause-menopause",
+      "image_prompt_preview": "Elegant premium cover or key visual for a Perimenopause / Menopause journal about energy management, clean minimalist design, generous white…",
+      "legal_enforced": true,
+      "source_file": "launch-kit/c2667b93_batch_ready.json",
+      "hero_asset_hint": "05_solopreneur_energy_content_calendar_cover.jpg"
+    },
+    {
+      "id": "listing-019",
+      "title": "Solopreneur / Creator Quarterly Planning Content Calendar | Printable PDF | Digital Download",
+      "price": "$12-19",
+      "niche": "solopreneur-creator",
+      "image_prompt_preview": "Elegant premium cover or key visual for a Solopreneur / Creator content calendar about quarterly planning, clean minimalist design, generous…",
+      "legal_enforced": true,
+      "source_file": "launch-kit/c2667b93_batch_ready.json",
+      "hero_asset_hint": "05_solopreneur_energy_content_calendar_cover.jpg"
+    },
+    {
+      "id": "listing-020",
+      "title": "Solopreneur / Creator Expense Categorization Client Kit | Printable PDF | Digital Download",
+      "price": "$12-19",
+      "niche": "solopreneur-creator",
+      "image_prompt_preview": "Elegant premium cover or key visual for a Solopreneur / Creator client kit about expense categorization, clean minimalist design, generous w…",
+      "legal_enforced": true,
+      "source_file": "launch-kit/c2667b93_batch_ready.json",
+      "hero_asset_hint": "20_solopreneur_client_pipeline_adhd_friendly_cover.jpg"
+    },
+    {
+      "id": "listing-021",
+      "title": "Perimenopause / Menopause Doctor Visit Prep Journal | Printable PDF | Digital Download",
+      "price": "$9-14",
+      "niche": "perimenopause-menopause",
+      "image_prompt_preview": "Elegant premium cover or key visual for a Perimenopause / Menopause journal about doctor visit prep, clean minimalist design, generous white…",
+      "legal_enforced": true,
+      "source_file": "launch-kit/c2667b93_batch_ready.json",
+      "hero_asset_hint": null
+    },
+    {
+      "id": "listing-022",
+      "title": "Perimenopause / Menopause Sleep Optimization Journal | Printable PDF | Digital Download",
+      "price": "$9-14",
+      "niche": "perimenopause-menopause",
+      "image_prompt_preview": "Elegant premium cover or key visual for a Perimenopause / Menopause journal about sleep optimization, clean minimalist design, generous whit…",
+      "legal_enforced": true,
+      "source_file": "launch-kit/c2667b93_batch_ready.json",
+      "hero_asset_hint": "15_perimenopause_sleep_optimization_cover.jpg"
+    },
+    {
+      "id": "listing-023",
+      "title": "Perimenopause / Menopause Nervous System Support Reflection Prompts | Printable PDF | Digital Download",
+      "price": "$12-19",
+      "niche": "perimenopause-menopause",
+      "image_prompt_preview": "Elegant premium cover or key visual for a Perimenopause / Menopause reflection prompts about nervous system support, clean minimalist design…",
+      "legal_enforced": true,
+      "source_file": "launch-kit/c2667b93_batch_ready.json",
+      "hero_asset_hint": "07_perimenopause_nervous_system_support_cover.jpg"
+    },
+    {
+      "id": "listing-024",
+      "title": "Solopreneur / Creator Energy Management For Business Financial System | Printable PDF | Digital Download",
+      "price": "$12-19",
+      "niche": "solopreneur-creator",
+      "image_prompt_preview": "Elegant premium cover or key visual for a Solopreneur / Creator financial system about energy management for business, clean minimalist desi…",
+      "legal_enforced": true,
+      "source_file": "launch-kit/c2667b93_batch_ready.json",
+      "hero_asset_hint": "01_crossover_nervous_system_operating_system_bundle.jpg"
+    },
+    {
+      "id": "listing-025",
+      "title": "\"Calm & Focus\" Minimalist Printable Wall Art Collection (8 designs) | Printable PDF | Digital Download",
+      "price": "$9-12",
+      "niche": "wall art-decor",
+      "image_prompt_preview": "Premium minimalist abstract printable wall art for calm & focus, abstract minimalist wall art style, soft organic shapes, gentle gradients i…",
+      "legal_enforced": true,
+      "source_file": "launch-kit/c2667b93_batch_ready.json",
+      "hero_asset_hint": "11_wall_art_calm_and_focus_2x3.jpg"
+    },
+    {
+      "id": "listing-026",
+      "title": "\"Grounded Presence\" Minimalist Printable Wall Art Collection (8 designs) | Printable PDF | Digital Download",
+      "price": "$9-12",
+      "niche": "wall art-decor",
+      "image_prompt_preview": "Premium minimalist abstract printable wall art for grounded presence, abstract minimalist wall art style, soft organic shapes, gentle gradie…",
+      "legal_enforced": true,
+      "source_file": "launch-kit/c2667b93_batch_ready.json",
+      "hero_asset_hint": "14_wall_art_grounded_presence_2x3.jpg"
+    },
+    {
+      "id": "listing-027",
+      "title": "\"Embodied Self\" Minimalist Printable Wall Art Collection (8 designs) | Printable PDF | Digital Download",
+      "price": "$9-12",
+      "niche": "wall art-decor",
+      "image_prompt_preview": "Premium minimalist abstract printable wall art for embodied self, abstract minimalist wall art style, soft organic shapes, gentle gradients…",
+      "legal_enforced": true,
+      "source_file": "launch-kit/c2667b93_batch_ready.json",
+      "hero_asset_hint": "19_wall_art_embodied_self_2x3.jpg"
+    },
+    {
+      "id": "listing-028",
+      "title": "\"Morning Light\" Minimalist Printable Wall Art Collection (8 designs) | Printable PDF | Digital Download",
+      "price": "$9-12",
+      "niche": "wall art-decor",
+      "image_prompt_preview": "Premium minimalist abstract printable wall art for morning light, abstract minimalist wall art style, soft organic shapes, gentle gradients…",
+      "legal_enforced": true,
+      "source_file": "launch-kit/c2667b93_batch_ready.json",
+      "hero_asset_hint": "17_wall_art_morning_light_2x3.jpg"
+    },
+    {
+      "id": "listing-029",
+      "title": "\"Gentle Strength\" Minimalist Printable Wall Art Collection (8 designs) | Printable PDF | Digital Download",
+      "price": "$9-12",
+      "niche": "wall art-decor",
+      "image_prompt_preview": "Premium minimalist abstract printable wall art for gentle strength, abstract minimalist wall art style, soft organic shapes, gentle gradient…",
+      "legal_enforced": true,
+      "source_file": "launch-kit/c2667b93_batch_ready.json",
+      "hero_asset_hint": "18_wall_art_gentle_strength_2x3.jpg"
+    }
+  ],
+  "legendary_quests": [
+    {
+      "id": "PKG-001",
+      "title": "Perimenopause Solopreneur Nervous System Operating System Bundle",
+      "price": "$34-49",
+      "aov_target": 42,
+      "includes": [
+        "NS Support Prompts",
+        "Energy Content Calendar",
+        "Mood Awareness",
+        "Sleep Journal",
+        "Pinterest pin"
+      ],
+      "hero_asset": "01_crossover_nervous_system_operating_system_bundle.jpg",
+      "tags": [
+        "perimenopause",
+        "solopreneur",
+        "bundle"
+      ],
+      "source": "launch-kit/PACKAGES_c2667b93.json"
+    },
+    {
+      "id": "PKG-002",
+      "title": "ADHD Executive Function Starter Pack",
+      "price": "$28-39",
+      "aov_target": 32,
+      "includes": [
+        "Task Initiation",
+        "Working Memory Journal",
+        "Hyperfocus Kit"
+      ],
+      "hero_asset": "03_adhd_task_initiation_challenge_cover.jpg",
+      "tags": [
+        "adhd",
+        "executive function",
+        "bundle"
+      ],
+      "source": "launch-kit/PACKAGES_c2667b93.json"
+    },
+    {
+      "id": "PKG-003",
+      "title": "Hormone-Aware Solopreneur Business + Symptom Log",
+      "price": "$32-45",
+      "aov_target": 38,
+      "includes": [
+        "Quarterly Planning",
+        "Lifestyle Experiments",
+        "Client Pipeline"
+      ],
+      "hero_asset": "13_crossover_hormone_aware_solopreneur_bundle.jpg",
+      "tags": [
+        "perimenopause",
+        "solopreneur",
+        "hormone aware"
+      ],
+      "source": "launch-kit/PACKAGES_c2667b93.json"
+    },
+    {
+      "id": "PKG-004",
+      "title": "Midlife Energy Journal for Solopreneurs",
+      "price": "$24-34",
+      "aov_target": 28,
+      "includes": [
+        "Energy Journal",
+        "Content Batching",
+        "Energy Financial System"
+      ],
+      "hero_asset": "16_crossover_peri_energy_solopreneur_journal.jpg",
+      "tags": [
+        "perimenopause",
+        "energy",
+        "solopreneur"
+      ],
+      "source": "launch-kit/PACKAGES_c2667b93.json"
+    },
+    {
+      "id": "PKG-005",
+      "title": "ADHD Emotional Regulation & Burnout Recovery Duo",
+      "price": "$22-32",
+      "aov_target": 26,
+      "includes": [
+        "Rejection Sensitivity",
+        "Burnout Recovery"
+      ],
+      "hero_asset": "02_adhd_rejection_sensitivity_challenge_cover.jpg",
+      "tags": [
+        "adhd",
+        "burnout"
+      ],
+      "source": "launch-kit/PACKAGES_c2667b93.json"
+    },
+    {
+      "id": "PKG-006",
+      "title": "Perimenopause Wellness Core Trio",
+      "price": "$26-36",
+      "aov_target": 30,
+      "includes": [
+        "Mood Awareness",
+        "Sleep Optimization",
+        "NS Support"
+      ],
+      "hero_asset": "07_perimenopause_nervous_system_support_cover.jpg",
+      "tags": [
+        "perimenopause",
+        "wellness"
+      ],
+      "source": "launch-kit/PACKAGES_c2667b93.json"
+    },
+    {
+      "id": "PKG-007",
+      "title": "Calm Focus Wall Art + ADHD Planner Mini Bundle",
+      "price": "$18-26",
+      "aov_target": 22,
+      "includes": [
+        "Calm & Focus art",
+        "Hyperfocus Kit",
+        "Task Initiation"
+      ],
+      "hero_asset": "11_wall_art_calm_and_focus_2x3.jpg",
+      "tags": [
+        "wall art",
+        "adhd"
+      ],
+      "source": "launch-kit/PACKAGES_c2667b93.json"
+    },
+    {
+      "id": "PKG-008",
+      "title": "Solopreneur Revenue & Pipeline Pack",
+      "price": "$24-35",
+      "aov_target": 28,
+      "includes": [
+        "Client Pipeline",
+        "Tax Prep",
+        "Content Batching"
+      ],
+      "hero_asset": "20_solopreneur_client_pipeline_adhd_friendly_cover.jpg",
+      "tags": [
+        "solopreneur",
+        "business"
+      ],
+      "source": "launch-kit/PACKAGES_c2667b93.json"
+    },
+    {
+      "id": "PKG-009",
+      "title": "Therapeutic Wall Art Collection Sampler (5 themes)",
+      "price": "$19-29",
+      "aov_target": 24,
+      "includes": [
+        "5 wall art heroes from batch"
+      ],
+      "hero_asset": "14_wall_art_grounded_presence_2x3.jpg",
+      "tags": [
+        "wall art",
+        "minimalist"
+      ],
+      "source": "launch-kit/PACKAGES_c2667b93.json"
+    },
+    {
+      "id": "PKG-010",
+      "title": "Pinterest Traffic Starter",
+      "price": "$15-22",
+      "aov_target": 18,
+      "includes": [
+        "Vertical pin",
+        "3 listing heroes"
+      ],
+      "hero_asset": "12_pinterest_peri_solo_mood_energy_pin_9x16.jpg",
+      "tags": [
+        "pinterest",
+        "marketing"
+      ],
+      "source": "launch-kit/PACKAGES_c2667b93.json"
+    },
+    {
+      "id": "PKG-011",
+      "title": "Perimenopause Lifestyle Lab",
+      "price": "$28-38",
+      "aov_target": 32,
+      "includes": [
+        "Lifestyle Experiments",
+        "Mood",
+        "Energy Journal"
+      ],
+      "hero_asset": "04_perimenopause_lifestyle_experiments_cover.jpg",
+      "tags": [
+        "perimenopause",
+        "lifestyle"
+      ],
+      "source": "launch-kit/PACKAGES_c2667b93.json"
+    },
+    {
+      "id": "PKG-012",
+      "title": "Nervous System Quick Start Lead Magnet",
+      "price": "$0 / $14 upsell",
+      "aov_target": 14,
+      "includes": [
+        "3-page PDF",
+        "Upsell PKG-001"
+      ],
+      "hero_asset": "01_crossover_nervous_system_operating_system_bundle.jpg",
+      "tags": [
+        "lead magnet",
+        "email"
+      ],
+      "source": "launch-kit/PACKAGES_c2667b93.json"
+    }
+  ],
+  "companion_signals": {
+    "last_pump_generated_at": null,
+    "pump_runs_detected": 0,
+    "ci_status": "unknown",
+    "next_recommended": "python3 scripts/recurring_pump.py --count 3 --wall-art --update-status --auton 947d2fc5",
+    "legal_enforced_sample": true
+  },
+  "legal_footer": "AI Disclosure: This digital product was created with AI assistance (Grok 4.3 / xAI) under original human prompts + heavy curation, original layout, text structures, and value-add. Every element complies with Etsy and platform policies. For personal use only. Not for resale or redistribution without permission. Wellness Disclaimer: This is not medical, therapeutic, or professional advice. Consult qualified professionals for health, mental health, or business concerns. Results vary. Use at your own discretion.",
+  "legal_disclosure_short": "AI Disclosure: This digital product was created with AI assistance (Grok 4.3 / xAI) under original human prompts + heavy curation, original layout, text structures, and value-add. Every element complies with Etsy and platform policies. For personal use only. Not for resale or redistribution without permission. Wellness Disclaimer: This is not medical, therapeutic, or professional advice. Consult qualified professionals for health, mental health, or business concerns. Results vary. Use at your own discretion.",
+  "legal_source": "scripts/batch_asset_prompts.py",
+  "pages_base_hint": "https://sespear86.github.io/clarityforge-digital/game/"
+}

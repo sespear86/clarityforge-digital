@@ -1,0 +1,6 @@
+{
+  "_note": "Static quest catalog stub for G3; gameplay quests will be expanded in G3. Empire metrics live in empire-state.json (generated).",
+  "version": "0.1-stub",
+  "auton": "947d2fc5",
+  "quests": []
+}
