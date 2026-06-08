@@ -29,3 +29,10 @@
 **Resume gamify AUTON**: `grok -p "/bustanut --resume 947d2fc5"`
 
 *Forge on.*
+
+## Bust c001 continuation (Oregon self-cont protocol)
+**Assets leveraged**: +6 new generated this phase (ADHD trackers, perimenopause wall art variants, solopreneur cycle/money maps - brand locked, premium printables). Session images/ used for volume. 
+**Progress**: MCP pushes for status/launch/PROD_READY. Pump logic noted for scheduler enhancement. xlsx refresh queued. Legal 100%. Guardian test project scaffold parallel for autonomy harden. 
+**Toward Finish Line**: Ramp velocity (more listings/assets/pins), first metrics, Pages/game update. Gate evidence accumulating. Exhausting options: more gens, pushes, subagents. 
+**Protocol**: scheduler_list clean (0). Oversight emitted. Next CONT + create at end. 
+<!-- Edited: 2026-06-08 | Device: Windows | By: Grok (bust c001 clarityforge + guardian) --> +assets + doc harden + protocol demo. Signature per prime directive. Keep er goinnnn. Bust a nut.
