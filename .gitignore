@@ -1,0 +1,25 @@
+
+*$py.class
+build/
+Command_Center_*.xlsx
+develop-eggs/
+dist/
+downloads/
+*.egg
+*.egg-info/
+.eggs/
+eggs/
+.installed.cfg
+lib/
+lib64/
+# Local xlsx snapshots (builder produces; commit explicit versions when desired)
+parts/
+progress/Command_Center_*.xlsx
+__pycache__/
+*.py[cod]
+.Python
+# Python / build artifacts (autonomous hygiene)
+sdist/
+*.so
+var/
+wheels/

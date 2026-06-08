@@ -20,7 +20,7 @@ jobs:
           echo "Generator smoke PASS"
       - name: Batch + legal smoke (df92e0c4+)
         run: |
-          python3 scripts/batch_asset_prompts.py --input /tmp/smoke_ideas.json --output /tmp/smoke_batch.json --auton df92e0c4
+          python3 scripts/batch_asset_prompts.py --input /tmp/smoke_ideas.json --output /tmp/smoke_batch.json --auton d2250b7f
           python3 -c '
 import json
 b=json.load(open("/tmp/smoke_batch.json"))
