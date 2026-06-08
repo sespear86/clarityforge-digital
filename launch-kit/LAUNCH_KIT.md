@@ -27,3 +27,19 @@ Copy the **full** block from `scripts/batch_asset_prompts.py` (`LEGAL_DISCLOSURE
 3. **Remaining singles**: Iterate `c2667b93_batch_ready.json` `items[]`; map cover via `asset_manifest_c2667b93.json` or `image_prompt` + Canva.
 4. **Pinterest**: Lead with asset `12_pinterest_peri_solo_mood_energy_pin_9x16.jpg` + PKG-010 set.
 5. **Finance**: Weekly update `Command_Center_c2667b93.xlsx` (Assumptions yellow cells, Snapshot, Ramp, 80-20, ROI).
+
+## Notifications / triggers
+
+- **GitHub Pages**: Shop links + free lead magnet (PKG-012) after CI deploy.
+- **Scheduler**: `scripts/recurring_pump.sh` — daily ideas refresh (1d interval when armed).
+- **Re-gate**: After first Etsy uploads, feed real orders into xlsx Ramp + ROI sheets.
+
+## Paths (local HQ)
+
+- **Primary**: `/home/Irikash/ClarityForge_Digital/`
+- **Clone mirror**: `/tmp/clarityforge-digital/`
+- **Remote**: `https://github.com/sespear86/clarityforge-digital`
+
+## Resume
+
+`grok -p "/bustanut --resume c2667b93"` | Mempalace: `projects/clarityforge-digital-c2667b93`

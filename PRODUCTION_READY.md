@@ -6,7 +6,7 @@
 **Status**: **Production Ready — VERDICT: PASS (after fixes per independent verifier report)**. System is now operable end-to-end. User (or Hermes) can run the pump weekly, generate legal listings + real samples, update the financial model, and launch/scale.
 
 ## Independent Verifier Gate (id 019ea48f-85b9-7930-8afa-75ea0ecf842a)
-The bg verifier subagent ran the exact Finish Line checklist from RESEARCH_SYNTHESIS.md and returned **VERDICT: FAIL** with 9 issues (mainly: no 0-issue reviewer round on deltas, xlsx tests missing, CI locally hardened but not pushed + no post-push green, PRODUCTION_READY was old c2667b93 at verifier snapshot time, xlsx still c2667b93-named, delivery not done, Mempalace no df92 drawer).
+The bg verifier subagent ran the exact Finish Line checklist from RESEARCH_SYNTHESIS.md and returned **VERDICT: FAIL** with 9 issues (mainly: no 0-issue reviewer round on deltas, xlsx tests missing, CI locally hardened but not pushed + no post-push green, PRODUCTION_READY was old c2667b93 at verifier snapshot time, xlsx still c2667b93-named, delivery not done, Mempalace no df92 drawer, git dirty).
 
 **Fixes applied in this loop (this turn)**:
 - Added `tests/test_xlsx.py` (sheets, yellow editable assumptions, formulas).
