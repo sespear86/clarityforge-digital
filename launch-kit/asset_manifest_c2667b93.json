@@ -1,8 +1,8 @@
 {
   "auton": "c2667b93",
-  "updated": "2026-06-07",
-  "total_assets": 26,
-  "accounting": "20 primary image_gen wave (session) + 6 kickoff samples (numbered 1-6 in assets/c2667b93_batch/)",
+  "updated": "2026-06-08",
+  "total_assets": 32,
+  "accounting": "20 primary image_gen wave (session) + 6 kickoff samples (numbered 1-6 in assets/c2667b93_batch/) + 6 bust c001 new generated this phase (ADHD trackers, perimenopause wall art variants, solopreneur trackers; leveraging 3 previous kickoff). Session-local binaries; use descriptions for refs.",
   "legal_note": "Pair every listing with full AI disclosure + wellness disclaimer from scripts/batch_asset_prompts.py",
   "base_paths": {
     "local": "/home/Irikash/ClarityForge_Digital",
@@ -36,6 +36,12 @@
     {"id": 23, "slug": "kickoff-sample-3", "file": "3.jpg", "type": "legacy_sample"},
     {"id": 24, "slug": "kickoff-sample-4", "file": "4.jpg", "type": "legacy_sample"},
     {"id": 25, "slug": "kickoff-sample-5", "file": "5.jpg", "type": "legacy_sample"},
-    {"id": 26, "slug": "kickoff-sample-6", "file": "6.jpg", "type": "legacy_sample"}
+    {"id": 26, "slug": "kickoff-sample-6", "file": "6.jpg", "type": "legacy_sample"},
+    {"id": 27, "slug": "adhd-dopamine-launchpad", "file": "ADHD_Dopamine_Launchpad_Daily_Task_Ignition_tracker_cover_desc_session-local", "type": "product_cover", "batch_title_match": "ADHD Dopamine Launchpad", "bust_c001": true, "desc": "clean minimalist sage green warm beige lavender palette, subtle botanical line elements, premium digital product style for neurodivergent focus ignition"},
+    {"id": 28, "slug": "peri-nervous-system-anchor-wall", "file": "Perimenopause_Nervous_System_Anchor_wall_art_desc_session-local", "type": "wall_art", "batch_title_match": "Perimenopause Nervous System Anchor", "bust_c001": true, "desc": "2x3 calming focus premium wall art for perimenopause nervous system support, brand locked"},
+    {"id": 29, "slug": "solo-aligned-abundance-tracker", "file": "Solopreneur_Aligned_Abundance_weekly_tracker_desc_session-local", "type": "product_cover", "batch_title_match": "Solopreneur Aligned Abundance", "bust_c001": true, "desc": "weekly money energy alignment tracker for solopreneurs, minimalist premium printable"},
+    {"id": 30, "slug": "peri-power-pause-wall", "file": "Perimenopause_Power_Pause_wall_art_variant_desc_session-local", "type": "wall_art", "batch_title_match": "Perimenopause Power Pause", "bust_c001": true, "desc": "wall art variant for embodied strength and somatic resets in perimenopause"},
+    {"id": 31, "slug": "adhd-focus-fuel-dashboard", "file": "ADHD_Focus_Fuel_Daily_Dashboard_desc_session-local", "type": "product_cover", "batch_title_match": "ADHD Focus Fuel Daily Dashboard", "bust_c001": true, "desc": "daily hyperfocus management + solopreneur pipeline crossover dashboard, ADHD/solo tracker"},
+    {"id": 32, "slug": "solo-cycle-sync-money-map", "file": "Solopreneur_Cycle_Sync_Money_Map_desc_session-local", "type": "product_cover", "batch_title_match": "Solopreneur Cycle Sync Money Map", "bust_c001": true, "desc": "monthly cycle-aware income expense client map tracker for perimenopausal solopreneurs"}
   ]
 }
