@@ -184,6 +184,32 @@ function bootstrapQuestsCatalog() {
   ];
 }
 
+async function loadQuestsFromFile() {
+  try {
+    const q = await fetchWithTimeout('./data/quests.json');
+    if (Array.isArray(q.quests) && q.quests.length) {
+      quests = q.quests;
+      return true;
+    }
+  } catch {
+    /* offline or missing file */
+  }
+  return false;
+}
+
+/** Refresh only bootstrap quest rows; preserve full G3 catalog from quests.json. */
+function mergeBootstrapQuests() {
+  const boot = bootstrapQuestsCatalog();
+  const bootIds = new Set(boot.map((q) => q.id));
+  const preserved = quests.filter((q) => !bootIds.has(q.id));
+  const mergedBoot = boot.map((bq) => {
+    const existing = quests.find((q) => q.id === bq.id);
+    return existing ? { ...existing, ...bq } : bq;
+  });
+  quests = [...preserved, ...mergedBoot];
+  if (!quests.length) quests = bootstrapQuestsCatalog();
+}
+
 async function loadGameData() {
   try {
     empire = await fetchWithTimeout('./data/empire-state.json');
@@ -191,13 +217,9 @@ async function loadGameData() {
     console.warn('empire-state fetch failed', e);
     empire = null;
   }
-  try {
-    const q = await fetchWithTimeout('./data/quests.json');
-    quests = Array.isArray(q.quests) && q.quests.length ? q.quests : bootstrapQuestsCatalog();
-  } catch {
-    quests = bootstrapQuestsCatalog();
-  }
-  if (!quests.length) quests = bootstrapQuestsCatalog();
+  const loaded = await loadQuestsFromFile();
+  if (!loaded) quests = bootstrapQuestsCatalog();
+  mergeBootstrapQuests();
   applyEmpireOverlay();
   renderAll();
 }
@@ -275,8 +297,17 @@ function renderHome() {
 
 function renderActMap() {
   const grid = document.getElementById('act-map-grid');
-  if (!grid || !empire?.acts) return;
+  if (!grid) return;
   grid.innerHTML = '';
+  if (!empire?.acts?.length) {
+    const empty = document.createElement('div');
+    empty.className = 'card calm-copy';
+    empty.setAttribute('role', 'status');
+    empty.textContent =
+      'Act landmarks will appear after sync. Use Sync & Export to fetch empire-state.json, or paste ramp JSON when offline.';
+    grid.appendChild(empty);
+    return;
+  }
   empire.acts.forEach((act) => {
     const li = document.createElement('article');
     li.className = `act-card${act.unlocked ? '' : ' is-locked'}`;
@@ -616,17 +647,43 @@ function renderAll() {
   updateCommitRecipe();
 }
 
+function applyPastedEmpirePayload(data) {
+  const looksLikeEmpire =
+    Array.isArray(data.acts) ||
+    Array.isArray(data.loot_deck) ||
+    data.scenario_bands != null;
+  if (looksLikeEmpire) {
+    empire = { ...(empire || {}), ...data };
+    applyEmpireOverlay();
+    return true;
+  }
+  if (data.metrics) {
+    player.empire_overlay = {
+      ...player.empire_overlay,
+      metrics: { ...player.empire_overlay?.metrics, ...data.metrics },
+      generated_at: data.generated_at || new Date().toISOString(),
+    };
+    if (data.acts) {
+      player.empire_overlay.acts = data.acts.map((a) => ({
+        id: a.id,
+        progress_pct: a.progress_pct,
+        unlocked: a.unlocked,
+      }));
+    }
+    return false;
+  }
+  player.empire_overlay = { ...player.empire_overlay, ...data };
+  return false;
+}
+
 async function syncFetch() {
   try {
     const data = await fetchWithTimeout('./data/empire-state.json');
     empire = data;
     player.last_sync_at = new Date().toISOString();
     applyEmpireOverlay();
-    quests = bootstrapQuestsCatalog().map((bq) => {
-      const existing = quests.find((q) => q.id === bq.id);
-      return existing || bq;
-    });
-    if (!quests.length) quests = bootstrapQuestsCatalog();
+    await loadQuestsFromFile();
+    mergeBootstrapQuests();
     savePlayer();
     renderAll();
     toast('Empire state synced.');
@@ -643,19 +700,12 @@ function syncPaste() {
   }
   try {
     const data = JSON.parse(ta.value);
-    if (data.metrics) {
-      player.empire_overlay = {
-        ...player.empire_overlay,
-        metrics: { ...player.empire_overlay.metrics, ...data.metrics },
-        generated_at: data.generated_at || new Date().toISOString(),
-      };
-    } else {
-      player.empire_overlay = { ...player.empire_overlay, ...data };
-    }
+    const refreshedEmpire = applyPastedEmpirePayload(data);
+    if (refreshedEmpire) mergeBootstrapQuests();
     player.last_sync_at = new Date().toISOString();
     savePlayer();
     renderAll();
-    toast('Overlay merged from paste.');
+    toast(refreshedEmpire ? 'Empire data merged from paste.' : 'Overlay merged from paste.');
   } catch {
     toast('Invalid JSON.');
   }
@@ -752,9 +802,12 @@ function wireEvents() {
         t.classList.toggle('is-active', t === tab);
         t.setAttribute('aria-selected', t === tab ? 'true' : 'false');
       });
+      const panel = document.getElementById('codex-panel');
+      if (panel) panel.setAttribute('aria-labelledby', tab.id);
       renderCodex();
     });
   });
+  // Arrow-key tab roving: deferred to G6 full keyboard smoke (DESIGN §11).
   document.getElementById('codex-niche-filter')?.addEventListener('change', renderCodex);
 
   const sm = document.getElementById('setting-focus-mode');

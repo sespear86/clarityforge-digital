@@ -88,14 +88,16 @@
       <h2 id="codex-heading">Forge Codex</h2>
       <p class="calm-copy">Collect listing relics from your real batch. Mark illustrated when you&rsquo;ve curated visuals.</p>
       <div class="codex-tabs" role="tablist" aria-label="Codex views">
-        <button type="button" class="tab is-active" role="tab" aria-selected="true" data-codex-tab="deck" id="tab-deck">Deck</button>
-        <button type="button" class="tab" role="tab" aria-selected="false" data-codex-tab="legendary" id="tab-legendary">Legendary</button>
+        <button type="button" class="tab is-active" role="tab" aria-selected="true" aria-controls="codex-panel" data-codex-tab="deck" id="tab-deck">Deck</button>
+        <button type="button" class="tab" role="tab" aria-selected="false" aria-controls="codex-panel" data-codex-tab="legendary" id="tab-legendary">Legendary</button>
       </div>
       <label class="filter-label" for="codex-niche-filter">Filter by niche</label>
       <select id="codex-niche-filter" class="select-input">
         <option value="">All niches</option>
       </select>
-      <div id="codex-grid" class="codex-grid" role="list"></div>
+      <div id="codex-panel" role="tabpanel" aria-labelledby="tab-deck">
+        <div id="codex-grid" class="codex-grid" role="list"></div>
+      </div>
     </section>
 
     <section id="view-ledger" class="view" data-view="ledger" aria-labelledby="ledger-heading" hidden>
