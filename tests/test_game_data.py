@@ -68,6 +68,7 @@ class TestGameDataBuild(unittest.TestCase):
         state = build_empire_state(ROOT, "947d2fc5")
         deck = state["loot_deck"]
         self.assertGreaterEqual(len(deck), 1)
+        self.assertEqual(len(deck), 29, "June c2667b93 fixture after title dedupe per §3.3 build_game_data rules")
         for card in deck:
             self.assertTrue(card["legal_enforced"])
             self.assertRegex(card["id"], r"^listing-\d{3}$")

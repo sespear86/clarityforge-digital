@@ -1,11 +1,25 @@
 /**
- * Clarity Quest: Empire Forge — G2 bootstrap (ESM)
+ * Clarity Quest: Empire Forge — G2 shell + G3 quest engine (ESM)
  * AUTON 947d2fc5 — shell, router, localStorage, sync/export stubs for G5.
  */
 
+import * as QuestEngine from './quest-engine.js';
+import { CODEX_TABS, wireCodexUi } from './codex.js';
+import {
+  fetchWithTimeout,
+  applyEmpireOverlayToPlayer,
+  applyPastedEmpirePayload,
+  syncFetchEmpire,
+} from './sync.js';
+import {
+  buildGameLogExport,
+  commitRecipeMarkdown,
+  downloadJson,
+  validateExportPayload,
+} from './export.js';
+
 const STORAGE_KEY = 'clarityforge_game_v1';
 const AUTON_ID = '947d2fc5';
-const FETCH_TIMEOUT_MS = 8000;
 const RING_CIRCUMFERENCE = 327;
 
 const DEFAULT_STATE = () => ({
@@ -36,8 +50,9 @@ let empire = null;
 let quests = [];
 /** @type {string|null} */
 let selectedQuestId = null;
-/** @type {Record<string, boolean>} */
-let stepDone = {};
+/** Per-quest step attestation: questId -> stepId -> done (isolates shared step ids across quests). */
+/** @type {Record<string, Record<string, boolean>>} */
+let questStepDone = {};
 /** @type {object|null} */
 let lastQuestExport = null;
 
@@ -92,17 +107,8 @@ function celebrate() {
   }, 1000);
 }
 
-async function fetchWithTimeout(url) {
-  const ctrl = new AbortController();
-  const t = window.setTimeout(() => ctrl.abort(), FETCH_TIMEOUT_MS);
-  try {
-    const res = await fetch(url, { signal: ctrl.signal, cache: 'no-store' });
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    return await res.json();
-  } finally {
-    window.clearTimeout(t);
-  }
-}
+/** @type {{ refresh: () => void } | null} */
+let codexController = null;
 
 function bootstrapQuestsCatalog() {
   const cmd =
@@ -185,29 +191,64 @@ function bootstrapQuestsCatalog() {
 }
 
 async function loadQuestsFromFile() {
-  try {
-    const q = await fetchWithTimeout('./data/quests.json');
-    if (Array.isArray(q.quests) && q.quests.length) {
-      quests = q.quests;
-      return true;
-    }
-  } catch {
-    /* offline or missing file */
-  }
-  return false;
+  quests = await QuestEngine.loadQuestsCatalog('./data/quests.json');
+  return quests.length > 0;
 }
 
-/** Refresh only bootstrap quest rows; preserve full G3 catalog from quests.json. */
+const BOOTSTRAP_OVERLAY_IDS = new Set([
+  'forge-pump-daily',
+  'legal-oath-transparency',
+  'rest-day-nurture',
+]);
+
+/** Overlay only live empire/bootstrap fields onto catalog rows — never clobber criteria, rewards, or steps structure. */
+function overlayDynamicBootstrapFields(catalogQuest, bootstrapQuest) {
+  const q = { ...catalogQuest, steps: (catalogQuest.steps || []).map((s) => ({ ...s })) };
+  if (catalogQuest.id === 'forge-pump-daily') {
+    const cmd = bootstrapQuest.real_command_example;
+    if (cmd) {
+      q.real_command_example = cmd;
+      q.steps = q.steps.map((step) =>
+        step.action === 'copy_command' ? { ...step, command: cmd } : step,
+      );
+    }
+  } else if (catalogQuest.id === 'legal-oath-transparency') {
+    const bootCopy = bootstrapQuest.steps?.find((s) => s.action === 'copy_command');
+    if (bootCopy?.command) {
+      q.steps = q.steps.map((step) =>
+        step.action === 'copy_command' ? { ...step, command: bootCopy.command } : step,
+      );
+    }
+    if (empire?.legal_disclosure_short) {
+      q.real_command_example = bootstrapQuest.real_command_example;
+    }
+  } else if (catalogQuest.id === 'rest-day-nurture') {
+    const bootCopy = bootstrapQuest.steps?.find((s) => s.action === 'copy_command');
+    if (bootCopy?.command) {
+      q.steps = q.steps.map((step) =>
+        step.action === 'copy_command' ? { ...step, command: bootCopy.command } : step,
+      );
+    }
+  }
+  return q;
+}
+
+/** Refresh dynamic overlays on bootstrap-linked ids; preserve full G3 catalog from quests.json. */
 function mergeBootstrapQuests() {
-  const boot = bootstrapQuestsCatalog();
-  const bootIds = new Set(boot.map((q) => q.id));
-  const preserved = quests.filter((q) => !bootIds.has(q.id));
-  const mergedBoot = boot.map((bq) => {
-    const existing = quests.find((q) => q.id === bq.id);
-    return existing ? { ...existing, ...bq } : bq;
+  const bootById = new Map(bootstrapQuestsCatalog().map((q) => [q.id, q]));
+  if (!quests.length) {
+    quests = bootstrapQuestsCatalog();
+    return;
+  }
+  quests = quests.map((q) => {
+    if (!BOOTSTRAP_OVERLAY_IDS.has(q.id)) return q;
+    const bq = bootById.get(q.id);
+    return bq ? overlayDynamicBootstrapFields(q, bq) : q;
   });
-  quests = [...preserved, ...mergedBoot];
-  if (!quests.length) quests = bootstrapQuestsCatalog();
+}
+
+function getStepDoneForQuest(questId) {
+  return questStepDone[questId] || {};
 }
 
 async function loadGameData() {
@@ -217,8 +258,7 @@ async function loadGameData() {
     console.warn('empire-state fetch failed', e);
     empire = null;
   }
-  const loaded = await loadQuestsFromFile();
-  if (!loaded) quests = bootstrapQuestsCatalog();
+  await loadQuestsFromFile();
   mergeBootstrapQuests();
   applyEmpireOverlay();
   renderAll();
@@ -226,14 +266,7 @@ async function loadGameData() {
 
 function applyEmpireOverlay() {
   if (!empire) return;
-  const overlay = {
-    generated_at: empire.generated_at,
-    metrics: empire.metrics,
-    acts: empire.acts?.map((a) => ({ id: a.id, progress_pct: a.progress_pct, unlocked: a.unlocked })),
-    pump_runs_detected: empire.metrics?.pump_runs_detected,
-    legal_enforced_sample: empire.metrics?.legal_enforced_sample,
-  };
-  player.empire_overlay = { ...player.empire_overlay, ...overlay };
+  player = applyEmpireOverlayToPlayer(player, empire);
   savePlayer();
 }
 
@@ -350,23 +383,49 @@ function selectQuest(id) {
   document.getElementById('quest-detail-title').textContent = q.title;
   document.getElementById('quest-detail-desc').textContent = q.fun_description || '';
   document.getElementById('quest-rewards').textContent = `Rewards: ${q.reward_xp || 0} XP, ${q.reward_shards || 0} shards`;
+  const done = player.completed_quest_ids.includes(q.id);
+  const isBoss = q.type === 'boss' || q.completion_criteria?.type === 'boss_attestation';
+  let bossNotice = document.getElementById('quest-boss-notice');
+  if (!bossNotice) {
+    bossNotice = document.createElement('p');
+    bossNotice.id = 'quest-boss-notice';
+    bossNotice.className = 'calm-copy boss-notice';
+    const completeBtn = document.getElementById('quest-complete-btn');
+    detail.insertBefore(bossNotice, completeBtn);
+  }
+  bossNotice.hidden = !isBoss;
+  if (isBoss) {
+    bossNotice.textContent =
+      'Attest real action (Etsy upload / bundle) — this is user-only. Export recipe only; no fake Etsy complete.';
+  }
+  const completeBtn = document.getElementById('quest-complete-btn');
+  if (completeBtn) {
+    completeBtn.disabled = done;
+    completeBtn.textContent = done
+      ? 'Completed'
+      : isBoss
+        ? 'I attest & export recipe'
+        : 'I completed this';
+  }
   const stepsEl = document.getElementById('quest-steps');
   stepsEl.innerHTML = '';
+  const stepsState = getStepDoneForQuest(id);
   (q.steps || []).forEach((step) => {
     const li = document.createElement('li');
-    li.className = `quest-step${stepDone[step.id] ? ' done' : ''}`;
+    li.className = `quest-step${stepsState[step.id] ? ' done' : ''}`;
     const label = document.createElement('span');
     label.className = 'step-label';
     label.textContent = step.label;
     li.appendChild(label);
     const actions = document.createElement('div');
     actions.className = 'codex-actions';
-    if (step.action === 'copy_command' && step.command) {
+    const cmdText = step.command || q.real_command_example || '';
+    if (step.action === 'copy_command' && cmdText) {
       const b = document.createElement('button');
       b.type = 'button';
       b.className = 'btn btn-secondary btn-copy';
       b.textContent = 'Copy command';
-      b.addEventListener('click', () => copyText(step.command));
+      b.addEventListener('click', () => copyText(cmdText));
       actions.appendChild(b);
     }
     if (step.action === 'attest' || step.action === 'attest_boss') {
@@ -375,7 +434,8 @@ function selectQuest(id) {
       b.className = 'btn btn-secondary';
       b.textContent = 'Mark step done';
       b.addEventListener('click', () => {
-        stepDone[step.id] = true;
+        if (!questStepDone[id]) questStepDone[id] = {};
+        questStepDone[id][step.id] = true;
         li.classList.add('done');
         toast('Step noted — honest attestation only.');
       });
@@ -405,122 +465,46 @@ function completeQuest() {
     toast('Already completed — nice work.');
     return;
   }
-  player.completed_quest_ids.push(q.id);
-  player.xp += q.reward_xp || 0;
-  player.listing_shards += q.reward_shards || 0;
-  bumpMomentum();
-  player.journal.push({
-    at: new Date().toISOString(),
-    quest_id: q.id,
-    note: `Completed ${q.title}`,
+  const res = QuestEngine.completeQuest(selectedQuestId, {
+    player,
+    empire,
+    quests,
+    stepDone: getStepDoneForQuest(selectedQuestId),
+    attested: true,
   });
+  if (!res.success) {
+    toast(res.reason || 'Could not complete quest.');
+    return;
+  }
+  player = res.playerUpdated;
   savePlayer();
-  lastQuestExport = buildQuestCompleteExport(q);
+  lastQuestExport = res.exportPayload || null;
   const dl = document.getElementById('download-quest-export-btn');
-  if (dl) dl.disabled = false;
+  if (dl) dl.disabled = !lastQuestExport;
+  if (lastQuestExport) {
+    const date = new Date().toISOString().slice(0, 10);
+    validateExportPayload(lastQuestExport);
+    downloadJson(`quest-complete-${lastQuestExport.quest_id}-${date}.json`, lastQuestExport);
+  }
   celebrate();
-  toast(`Quest complete: ${q.title}. +${q.reward_xp || 0} XP`);
+  const momNote =
+    q.type === 'daily' || (q.tags || []).includes('momentum')
+      ? ` Momentum: ${player.momentum_streak}.`
+      : '';
+  toast(`Quest complete: ${q.title}. +${res.xpDelta || 0} XP.${momNote}`);
   renderQuestList();
+  if (selectedQuestId) selectQuest(selectedQuestId);
   updateHud();
 }
 
-function bumpMomentum() {
-  const today = new Date().toISOString().slice(0, 10);
-  if (player.last_forge_date === today) return;
-  const yesterday = new Date();
-  yesterday.setDate(yesterday.getDate() - 1);
-  const y = yesterday.toISOString().slice(0, 10);
-  if (player.last_forge_date === y) {
-    player.momentum_streak += 1;
-  } else if (player.last_forge_date) {
-    const gap = daysBetween(player.last_forge_date, today);
-    if (gap <= 4 && player.momentum_grace_days_used < 3) {
-      player.momentum_grace_days_used += 1;
-      player.momentum_streak += 1;
-    } else if (gap === 1) {
-      player.momentum_streak += 1;
-    } else {
-      player.momentum_streak = 1;
-    }
-  } else {
-    player.momentum_streak = 1;
-  }
-  player.last_forge_date = today;
-}
-
-function daysBetween(a, b) {
-  const d1 = new Date(a);
-  const d2 = new Date(b);
-  return Math.round((d2 - d1) / 86400000);
-}
-
-function buildQuestCompleteExport(q) {
-  const date = new Date().toISOString().slice(0, 10);
-  return {
-    exported_at: new Date().toISOString(),
-    auton: AUTON_ID,
-    quest_id: q.id,
-    player_xp_delta: q.reward_xp || 0,
-    suggested_commit_message: `progress(game): quest-complete ${q.id} (${AUTON_ID})`,
-    suggested_files: [q.completion_criteria?.suggested_artifact || `progress/game/quest-complete-${q.id}-${date}.json`],
-    commit_recipe_markdown: [
-      '1. Download this JSON',
-      '2. git add progress/game/quest-complete-*.json',
-      '3. git commit -m "progress(game): quest attestation"',
-      '4. Optional: grok_com_github push_files',
-    ].join('\n'),
-    mcp_snippet_hint: 'push_files for progress/game/',
-    append_journal_path: 'progress/game/',
-  };
-}
-
-function buildGameLogExport() {
-  const date = new Date().toISOString().slice(0, 10);
-  const overlay = player.empire_overlay?.metrics || {};
-  return {
-    exported_at: new Date().toISOString(),
-    schema_version: '1',
-    player: {
-      xp: player.xp,
-      listing_shards: player.listing_shards,
-      momentum_streak: player.momentum_streak,
-      last_forge_date: player.last_forge_date,
-      completed_quest_ids: [...player.completed_quest_ids],
-      illustrated_relic_ids: [...player.illustrated_relic_ids],
-      settings: { ...player.settings },
-    },
-    empire_overlay: {
-      batch_listings: overlay.batch_listings,
-      assets_integrated: overlay.assets_integrated,
-      empire_score: overlay.empire_score ?? empireScore(),
-      generated_at: player.empire_overlay?.generated_at || empire?.generated_at,
-      pump_runs_detected: overlay.pump_runs_detected,
-      legal_enforced_sample: overlay.legal_enforced_sample,
-    },
-    journal_excerpt: player.journal.slice(-5),
-    suggested_commit_message: `progress(game): game-log ${date} (${AUTON_ID})`,
-    suggested_paths: [`progress/game/game-log-${date}.json`],
-    no_secrets_note: 'Contains no credentials, real revenue, or PII. Safe for repo.',
-  };
-}
-
-function downloadJson(filename, data) {
-  const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
-  const a = document.createElement('a');
-  a.href = URL.createObjectURL(blob);
-  a.download = filename;
-  a.click();
-  URL.revokeObjectURL(a.href);
+function gameLogPayload() {
+  return buildGameLogExport(player, empire, empireScore);
 }
 
 function updateCommitRecipe() {
   const pre = document.getElementById('commit-recipe');
   if (!pre) return;
-  pre.textContent = [
-    'git add progress/game/game-log-*.json progress/game/quest-complete-*.json',
-    `git commit -m "progress(game): sync attestation (${AUTON_ID})"`,
-    'python3 scripts/build_game_data.py --auton ' + AUTON_ID,
-  ].join('\n');
+  pre.textContent = commitRecipeMarkdown();
 }
 
 function renderLedger() {
@@ -534,89 +518,10 @@ function renderLedger() {
   `;
 }
 
-let codexTab = 'deck';
+let codexTab = CODEX_TABS.deck;
 
 function renderCodex() {
-  const grid = document.getElementById('codex-grid');
-  const filter = document.getElementById('codex-niche-filter');
-  if (!grid) return;
-  const nicheVal = filter?.value || '';
-  let items = [];
-  if (codexTab === 'legendary') {
-    items = (empire?.legendary_quests || []).map((p) => ({
-      id: p.id,
-      title: p.title,
-      niche: (p.tags && p.tags[0]) || 'legendary',
-      preview: `Bundle · ${p.price}`,
-      prompt: p.includes?.join(', ') || p.title,
-      kind: 'legendary',
-    }));
-  } else {
-    items = (empire?.loot_deck || []).map((l) => ({
-      id: l.id,
-      title: l.title,
-      niche: l.niche,
-      preview: l.price,
-      prompt: l.image_prompt_preview,
-      kind: 'loot',
-    }));
-  }
-  if (filter && filter.options.length <= 1) {
-    const niches = [...new Set(items.map((i) => i.niche).filter(Boolean))].sort();
-    niches.forEach((n) => {
-      const opt = document.createElement('option');
-      opt.value = n;
-      opt.textContent = n.replace(/-/g, ' ');
-      filter.appendChild(opt);
-    });
-  }
-  const filtered = nicheVal ? items.filter((i) => i.niche === nicheVal) : items;
-  grid.innerHTML = '';
-  filtered.forEach((item) => {
-    const card = document.createElement('article');
-    card.className = 'codex-card';
-    card.setAttribute('role', 'listitem');
-    const illustrated = player.illustrated_relic_ids.includes(item.id);
-    card.innerHTML = `
-      <div class="codex-card-inner">
-        <span class="niche-tag">${item.niche}</span>
-        <h4>${item.title}</h4>
-        <p class="calm-copy">${item.preview}</p>
-        <p class="prompt-preview" hidden>${item.prompt || ''}</p>
-      </div>
-    `;
-    const actions = document.createElement('div');
-    actions.className = 'codex-actions';
-    const flip = document.createElement('button');
-    flip.type = 'button';
-    flip.className = 'btn btn-secondary';
-    flip.textContent = 'Flip card';
-    flip.addEventListener('click', () => {
-      card.classList.toggle('is-flipped');
-      const prev = card.querySelector('.prompt-preview');
-      if (prev) prev.hidden = !card.classList.contains('is-flipped');
-    });
-    const copy = document.createElement('button');
-    copy.type = 'button';
-    copy.className = 'btn btn-secondary';
-    copy.textContent = 'Copy prompt';
-    copy.addEventListener('click', () => copyText(item.prompt || item.title));
-    const mark = document.createElement('button');
-    mark.type = 'button';
-    mark.className = 'btn btn-secondary';
-    mark.textContent = illustrated ? 'Illustrated ✓' : 'Mark Illustrated';
-    mark.addEventListener('click', () => {
-      if (!player.illustrated_relic_ids.includes(item.id)) {
-        player.illustrated_relic_ids.push(item.id);
-        savePlayer();
-        mark.textContent = 'Illustrated ✓';
-        toast('Relic marked illustrated.');
-      }
-    });
-    actions.append(flip, copy, mark);
-    card.querySelector('.codex-card-inner').appendChild(actions);
-    grid.appendChild(card);
-  });
+  codexController?.refresh();
 }
 
 function renderLegal() {
@@ -647,40 +552,11 @@ function renderAll() {
   updateCommitRecipe();
 }
 
-function applyPastedEmpirePayload(data) {
-  const looksLikeEmpire =
-    Array.isArray(data.acts) ||
-    Array.isArray(data.loot_deck) ||
-    data.scenario_bands != null;
-  if (looksLikeEmpire) {
-    empire = { ...(empire || {}), ...data };
-    applyEmpireOverlay();
-    return true;
-  }
-  if (data.metrics) {
-    player.empire_overlay = {
-      ...player.empire_overlay,
-      metrics: { ...player.empire_overlay?.metrics, ...data.metrics },
-      generated_at: data.generated_at || new Date().toISOString(),
-    };
-    if (data.acts) {
-      player.empire_overlay.acts = data.acts.map((a) => ({
-        id: a.id,
-        progress_pct: a.progress_pct,
-        unlocked: a.unlocked,
-      }));
-    }
-    return false;
-  }
-  player.empire_overlay = { ...player.empire_overlay, ...data };
-  return false;
-}
-
 async function syncFetch() {
   try {
-    const data = await fetchWithTimeout('./data/empire-state.json');
+    const { empire: data, syncedAt } = await syncFetchEmpire('./data/empire-state.json');
     empire = data;
-    player.last_sync_at = new Date().toISOString();
+    player.last_sync_at = syncedAt;
     applyEmpireOverlay();
     await loadQuestsFromFile();
     mergeBootstrapQuests();
@@ -700,12 +576,14 @@ function syncPaste() {
   }
   try {
     const data = JSON.parse(ta.value);
-    const refreshedEmpire = applyPastedEmpirePayload(data);
-    if (refreshedEmpire) mergeBootstrapQuests();
+    const result = applyPastedEmpirePayload(empire, player, data);
+    player = result.player;
+    if (result.empire) empire = result.empire;
+    if (result.refreshedEmpire) mergeBootstrapQuests();
     player.last_sync_at = new Date().toISOString();
     savePlayer();
     renderAll();
-    toast(refreshedEmpire ? 'Empire data merged from paste.' : 'Overlay merged from paste.');
+    toast(result.refreshedEmpire ? 'Empire data merged from paste.' : 'Overlay merged from paste.');
   } catch {
     toast('Invalid JSON.');
   }
@@ -754,7 +632,7 @@ function wireEvents() {
   });
   document.getElementById('home-export-btn')?.addEventListener('click', () => {
     const date = new Date().toISOString().slice(0, 10);
-    downloadJson(`game-log-${date}.json`, buildGameLogExport());
+    downloadJson(`game-log-${date}.json`, gameLogPayload());
     toast('Game log downloaded.');
   });
   document.getElementById('quest-complete-btn')?.addEventListener('click', completeQuest);
@@ -762,7 +640,7 @@ function wireEvents() {
   document.getElementById('sync-paste-btn')?.addEventListener('click', syncPaste);
   document.getElementById('download-game-log-btn')?.addEventListener('click', () => {
     const date = new Date().toISOString().slice(0, 10);
-    downloadJson(`game-log-${date}.json`, buildGameLogExport());
+    downloadJson(`game-log-${date}.json`, gameLogPayload());
   });
   document.getElementById('download-quest-export-btn')?.addEventListener('click', () => {
     if (!lastQuestExport) return;
@@ -782,7 +660,7 @@ function wireEvents() {
     if (window.confirm('Reset all local progress? Export first if you need a backup.')) {
       localStorage.removeItem(STORAGE_KEY);
       player = DEFAULT_STATE();
-      stepDone = {};
+      questStepDone = {};
       savePlayer();
       renderAll();
       toast('Local progress reset.');
@@ -795,20 +673,43 @@ function wireEvents() {
       if (pre) copyText(pre.textContent);
     });
   });
-  document.querySelectorAll('[data-codex-tab]').forEach((tab) => {
-    tab.addEventListener('click', () => {
-      codexTab = tab.dataset.codexTab;
-      document.querySelectorAll('[data-codex-tab]').forEach((t) => {
-        t.classList.toggle('is-active', t === tab);
-        t.setAttribute('aria-selected', t === tab ? 'true' : 'false');
-      });
-      const panel = document.getElementById('codex-panel');
-      if (panel) panel.setAttribute('aria-labelledby', tab.id);
-      renderCodex();
+  const tabButtons = [...document.querySelectorAll('[data-codex-tab]')];
+  codexController = wireCodexUi({
+    tabButtons,
+    nicheFilterEl: document.getElementById('codex-niche-filter'),
+    scoreVizEl: document.getElementById('codex-score-viz'),
+    gridEl: document.getElementById('codex-grid'),
+    getState: () => ({
+      empire,
+      player,
+      tab: codexTab,
+      onCopy: copyText,
+      onMarkIllustrated: (id) => {
+        if (!player.illustrated_relic_ids.includes(id)) {
+          player.illustrated_relic_ids.push(id);
+          savePlayer();
+          toast('Relic marked illustrated.');
+        }
+      },
+    }),
+    setTab: (id) => {
+      codexTab = id;
+    },
+    onRender: renderCodex,
+  });
+
+  const navLinks = [...document.querySelectorAll('.nav-link')];
+  navLinks.forEach((link, idx) => {
+    link.addEventListener('keydown', (e) => {
+      if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+      e.preventDefault();
+      const next =
+        e.key === 'ArrowRight'
+          ? navLinks[(idx + 1) % navLinks.length]
+          : navLinks[(idx - 1 + navLinks.length) % navLinks.length];
+      next.focus();
     });
   });
-  // Arrow-key tab roving: deferred to G6 full keyboard smoke (DESIGN §11).
-  document.getElementById('codex-niche-filter')?.addEventListener('change', renderCodex);
 
   const sm = document.getElementById('setting-focus-mode');
   const ss = document.getElementById('setting-sound');

@@ -28,9 +28,15 @@ Copy the **full** block from `scripts/batch_asset_prompts.py` (`LEGAL_DISCLOSURE
 4. **Pinterest**: Lead with asset `12_pinterest_peri_solo_mood_energy_pin_9x16.jpg` + PKG-010 set.
 5. **Finance**: Weekly update `Command_Center_c2667b93.xlsx` (Assumptions yellow cells, Snapshot, Ramp, 80-20, ROI).
 
+## Clarity Quest (gamified companion)
+
+- **Play URL** (after CI): `https://sespear86.github.io/clarityforge-digital/game/`
+- **Data refresh**: `python3 scripts/build_game_data.py --auton 947d2fc5` after batch/pump/status updates — feeds Forge Codex loot + Empire Score in the game.
+- **Player exports**: `progress/game/README.md` — quest-complete and game-log JSON for honest attestations (no auto-Etsy).
+
 ## Notifications / triggers
 
-- **GitHub Pages**: Shop links + free lead magnet (PKG-012) after CI deploy.
+- **GitHub Pages**: Shop links + free lead magnet (PKG-012) + **Clarity Quest** (`game/`) after CI deploy.
 - **Scheduler**: `scripts/recurring_pump.sh` — daily ideas refresh (1d interval when armed).
 - **Re-gate**: After first Etsy uploads, feed real orders into xlsx Ramp + ROI sheets.
 

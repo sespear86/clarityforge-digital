@@ -1,6 +1,588 @@
 {
-  "_note": "Static quest catalog stub for G3; gameplay quests will be expanded in G3. Empire metrics live in empire-state.json (generated).",
-  "version": "0.1-stub",
+  "version": "1.0",
   "auton": "947d2fc5",
-  "quests": []
+  "quests": [
+    {
+      "id": "forge-pump-daily",
+      "title": "Morning Forge",
+      "tier": "S",
+      "type": "daily",
+      "phase_act": 1,
+      "act_slug": "clearing",
+      "fun_description": "Light the forge with a small pump—three listing shards count.",
+      "real_command_example": "python3 scripts/recurring_pump.py --count 3 --wall-art --update-status --auton 947d2fc5",
+      "steps": [
+        { "id": "copy", "label": "Copy pump command", "action": "copy_command" },
+        { "id": "run", "label": "Run in terminal or Hermes", "action": "attest" },
+        { "id": "sync", "label": "Sync empire state", "action": "sync_hint" }
+      ],
+      "reward_xp": 30,
+      "reward_shards": 3,
+      "unlock_type": "always",
+      "completion_criteria": {
+        "type": "attestation",
+        "export_on_complete": true,
+        "suggested_artifact": "progress/game/quest-complete-forge-pump-daily.json"
+      },
+      "tags": ["pump", "daily", "momentum"]
+    },
+    {
+      "id": "forge-pump-momentum",
+      "title": "Momentum Pump",
+      "tier": "S",
+      "type": "daily",
+      "phase_act": 1,
+      "act_slug": "clearing",
+      "fun_description": "Stack calm velocity—another honest pump keeps your streak warm.",
+      "real_command_example": "python3 scripts/recurring_pump.py --count 12 --wall-art --update-status --auton 947d2fc5",
+      "steps": [
+        { "id": "copy", "label": "Copy larger pump", "action": "copy_command" },
+        { "id": "run", "label": "Run and verify legal on every item", "action": "attest" },
+        { "id": "sync", "label": "Sync to refresh metrics", "action": "sync_hint" }
+      ],
+      "reward_xp": 25,
+      "reward_shards": 2,
+      "unlock_type": "always",
+      "completion_criteria": {
+        "type": "attestation",
+        "export_on_complete": true,
+        "suggested_artifact": "progress/game/quest-complete-forge-pump-momentum.json"
+      },
+      "tags": ["pump", "daily", "momentum"]
+    },
+    {
+      "id": "legal-oath-transparency",
+      "title": "Oath of Transparency",
+      "tier": "S",
+      "type": "companion",
+      "phase_act": 1,
+      "act_slug": "clearing",
+      "fun_description": "Copy the short disclosure SSOT—the same pointer batch_asset_prompts.py enforces.",
+      "real_command_example": "python3 -c \"from scripts.batch_asset_prompts import SHORT_DISCLOSURE; print(SHORT_DISCLOSURE)\"",
+      "steps": [
+        { "id": "disclosure", "label": "Copy SHORT_DISCLOSURE pointer", "action": "copy_command" },
+        { "id": "review", "label": "Confirm legal on every listing you ship", "action": "attest" }
+      ],
+      "reward_xp": 15,
+      "reward_shards": 1,
+      "unlock_type": "always",
+      "completion_criteria": {
+        "type": "legal_streak",
+        "streak_days": 1,
+        "description": "Attest one legal-forge day",
+        "export_on_complete": true,
+        "suggested_artifact": "progress/game/legal-oath-transparency.json"
+      },
+      "tags": ["legal", "wellness"]
+    },
+    {
+      "id": "compliance-guardian",
+      "title": "Compliance Guardian",
+      "tier": "M",
+      "type": "campaign",
+      "phase_act": 1,
+      "act_slug": "clearing",
+      "fun_description": "Review ten Codex relics with legal_enforced true—guard the forge.",
+      "real_command_example": "Open Forge Codex after sync → verify legal_enforced on 10 deck items",
+      "steps": [
+        { "id": "sync", "label": "Sync empire-state for fresh deck", "action": "sync_hint" },
+        { "id": "review", "label": "Review 10 legal-enforced listings in Codex", "action": "attest" },
+        { "id": "attest", "label": "Attest compliance review complete", "action": "attest" }
+      ],
+      "reward_xp": 40,
+      "reward_shards": 5,
+      "unlock_type": "always",
+      "completion_criteria": {
+        "type": "attestation",
+        "export_on_complete": true,
+        "suggested_artifact": "progress/game/quest-complete-compliance-guardian.json"
+      },
+      "tags": ["legal", "codex"]
+    },
+    {
+      "id": "idea-spark",
+      "title": "Idea Spark",
+      "tier": "S",
+      "type": "campaign",
+      "phase_act": 1,
+      "act_slug": "clearing",
+      "fun_description": "A small burst of ideas feeds Act I—generator truth, not fantasy SKUs.",
+      "real_command_example": "python3 scripts/generate_product_ideas.py --count 10 --wall-art",
+      "steps": [
+        { "id": "copy", "label": "Copy generator command", "action": "copy_command" },
+        { "id": "run", "label": "Run generator in repo", "action": "attest" },
+        { "id": "sync", "label": "Sync after pump or status update", "action": "sync_hint" }
+      ],
+      "reward_xp": 20,
+      "reward_shards": 2,
+      "unlock_type": "always",
+      "completion_criteria": {
+        "type": "attestation",
+        "export_on_complete": true,
+        "suggested_artifact": "progress/pump_log_947d2fc5.md"
+      },
+      "tags": ["ideas", "phase-1"]
+    },
+    {
+      "id": "chronicle-entry",
+      "title": "Chronicle Entry",
+      "tier": "S",
+      "type": "ops",
+      "phase_act": 1,
+      "act_slug": "clearing",
+      "fun_description": "Log one honest line in progress/—future you will thank present you.",
+      "real_command_example": "echo \"$(date -Iseconds) forge note\" >> progress/forge-chronicle.md",
+      "steps": [
+        { "id": "write", "label": "Add a progress/ chronicle line", "action": "attest" },
+        { "id": "sync", "label": "Optional: sync game overlay", "action": "sync_hint" }
+      ],
+      "reward_xp": 12,
+      "reward_shards": 1,
+      "unlock_type": "always",
+      "completion_criteria": { "type": "attestation", "export_on_complete": false },
+      "tags": ["journal", "progress"]
+    },
+    {
+      "id": "visual-codex-curate",
+      "title": "Visual Codex Curate",
+      "tier": "M",
+      "type": "campaign",
+      "phase_act": 2,
+      "act_slug": "crossroads",
+      "fun_description": "Flip three relic cards and copy one image prompt for real asset work.",
+      "real_command_example": "Forge Codex: flip card → Copy prompt → image_gen in Grok",
+      "steps": [
+        { "id": "flip", "label": "Flip 3 codex cards", "action": "checklist" },
+        { "id": "copy", "label": "Copy one image prompt to clipboard", "action": "attest" },
+        { "id": "mark", "label": "Mark one relic Illustrated", "action": "attest" }
+      ],
+      "reward_xp": 22,
+      "reward_shards": 3,
+      "unlock_type": "act_unlocked",
+      "unlock_requirements": { "act_slug": "crossroads" },
+      "completion_criteria": {
+        "type": "attestation",
+        "export_on_complete": true,
+        "suggested_artifact": "progress/game/quest-complete-visual-codex-curate.json"
+      },
+      "tags": ["codex", "assets"]
+    },
+    {
+      "id": "illustrate-relic",
+      "title": "Illustrate Relic",
+      "tier": "S",
+      "type": "achievement",
+      "phase_act": 2,
+      "act_slug": "crossroads",
+      "fun_description": "Mark a deck relic illustrated after you create or place a real visual.",
+      "real_command_example": "image_gen or image_edit using codex image_prompt_preview",
+      "steps": [
+        { "id": "asset", "label": "Create or place one real asset file", "action": "attest" },
+        { "id": "mark", "label": "Mark Illustrated in Codex", "action": "attest" }
+      ],
+      "reward_xp": 18,
+      "reward_shards": 2,
+      "unlock_type": "act_unlocked",
+      "completion_criteria": { "type": "attestation", "export_on_complete": false },
+      "tags": ["codex", "illustration"]
+    },
+    {
+      "id": "archive-to-vault",
+      "title": "Archive to Vault",
+      "tier": "M",
+      "type": "ops",
+      "phase_act": 2,
+      "act_slug": "crossroads",
+      "fun_description": "Move a ready batch JSON into launch-kit vault paths the CI expects.",
+      "real_command_example": "python3 scripts/batch_asset_prompts.py --input launch-kit/ideas.json --output launch-kit/pump_947d2fc5_ready.json --auton 947d2fc5",
+      "steps": [
+        { "id": "copy", "label": "Copy batch command", "action": "copy_command" },
+        { "id": "run", "label": "Run batch with legal injector", "action": "attest" },
+        { "id": "sync", "label": "Sync so loot_deck updates", "action": "sync_hint" }
+      ],
+      "reward_xp": 35,
+      "reward_shards": 4,
+      "unlock_type": "metric",
+      "unlock_requirements": { "batch_listings": 10 },
+      "completion_criteria": {
+        "type": "attestation",
+        "export_on_complete": true,
+        "suggested_artifact": "progress/game/quest-complete-archive-to-vault.json"
+      },
+      "tags": ["batch", "launch-kit"]
+    },
+    {
+      "id": "tuner-of-fates",
+      "title": "Tuner of Fates",
+      "tier": "S",
+      "type": "ops",
+      "phase_act": 1,
+      "act_slug": "clearing",
+      "fun_description": "Refresh the Command Center xlsx—yellow cells are your gentle levers.",
+      "real_command_example": "python3 scripts/build_command_center_xlsx.py",
+      "steps": [
+        { "id": "copy", "label": "Copy xlsx build command", "action": "copy_command" },
+        { "id": "edit", "label": "Tweak one yellow assumption", "action": "attest" },
+        { "id": "run", "label": "Rebuild xlsx", "action": "attest" }
+      ],
+      "reward_xp": 16,
+      "reward_shards": 1,
+      "unlock_type": "always",
+      "completion_criteria": {
+        "type": "attestation",
+        "export_on_complete": true,
+        "suggested_artifact": "progress/Command_Center.md"
+      },
+      "tags": ["xlsx", "finance"]
+    },
+    {
+      "id": "empire-ledger-sync",
+      "title": "Empire Ledger Sync",
+      "tier": "S",
+      "type": "daily",
+      "phase_act": 1,
+      "act_slug": "clearing",
+      "fun_description": "Pull fresh ramp truth into the game—overlay never overwrites your journal.",
+      "real_command_example": "Sync tab → Fetch empire-state.json (or paste progress/*-ramp-status.json)",
+      "steps": [
+        { "id": "sync", "label": "Fetch or paste empire JSON", "action": "sync_hint" },
+        { "id": "attest", "label": "Confirm metrics visible in HUD", "action": "attest" }
+      ],
+      "reward_xp": 14,
+      "reward_shards": 1,
+      "unlock_type": "always",
+      "completion_criteria": {
+        "type": "metric_threshold",
+        "metric": "batch_listings",
+        "threshold": 1,
+        "export_on_complete": false
+      },
+      "tags": ["sync", "metrics"]
+    },
+    {
+      "id": "signal-fire-pinterest",
+      "title": "Signal Fire (Pinterest)",
+      "tier": "M",
+      "type": "campaign",
+      "phase_act": 2,
+      "act_slug": "crossroads",
+      "fun_description": "Draft one Pinterest pin from a real listing prompt—traffic without hype.",
+      "real_command_example": "Copy codex prompt → reference_to_video or image_gen vertical 2:3",
+      "steps": [
+        { "id": "prompt", "label": "Copy one pin-ready prompt", "action": "copy_command" },
+        { "id": "create", "label": "Create pin creative (tool of choice)", "action": "attest" },
+        { "id": "log", "label": "Note pin in progress/ or journal", "action": "attest" }
+      ],
+      "reward_xp": 28,
+      "reward_shards": 3,
+      "unlock_type": "act_unlocked",
+      "completion_criteria": {
+        "type": "attestation",
+        "export_on_complete": true,
+        "suggested_artifact": "progress/game/quest-complete-signal-fire-pinterest.json"
+      },
+      "tags": ["pinterest", "traffic"]
+    },
+    {
+      "id": "publish-decree",
+      "title": "Publish Decree",
+      "tier": "M",
+      "type": "campaign",
+      "phase_act": 2,
+      "act_slug": "crossroads",
+      "fun_description": "Prepare listing copy from launch-kit with disclosure intact.",
+      "real_command_example": "Open launch-kit/*_batch_ready.json → copy one etsy_title + tags",
+      "steps": [
+        { "id": "pick", "label": "Pick one ready listing JSON", "action": "attest" },
+        { "id": "legal", "label": "Verify disclosure block present", "action": "attest" },
+        { "id": "export", "label": "Save draft to progress/ if helpful", "action": "attest" }
+      ],
+      "reward_xp": 24,
+      "reward_shards": 3,
+      "unlock_type": "metric",
+      "unlock_requirements": { "batch_listings": 20 },
+      "completion_criteria": {
+        "type": "attestation",
+        "export_on_complete": true,
+        "suggested_artifact": "progress/game/quest-complete-publish-decree.json"
+      },
+      "tags": ["etsy", "copy"]
+    },
+    {
+      "id": "shield-of-the-forge",
+      "title": "Shield of the Forge",
+      "tier": "S",
+      "type": "companion",
+      "phase_act": 1,
+      "act_slug": "clearing",
+      "fun_description": "Re-read AGENTS.md legal lock—shields are boring and beautiful.",
+      "real_command_example": "head -80 AGENTS.md  # legal + disclosure rules",
+      "steps": [
+        { "id": "read", "label": "Review AGENTS.md legal section", "action": "attest" },
+        { "id": "attest", "label": "Attest 100% legal on next ship", "action": "attest" }
+      ],
+      "reward_xp": 10,
+      "reward_shards": 0,
+      "unlock_type": "always",
+      "completion_criteria": { "type": "attestation", "export_on_complete": false },
+      "tags": ["legal", "agents"]
+    },
+    {
+      "id": "storefront-banner",
+      "title": "Storefront Banner",
+      "tier": "M",
+      "type": "campaign",
+      "phase_act": 2,
+      "act_slug": "crossroads",
+      "fun_description": "Refresh docs/index.html or Pages hero—owned traffic matters.",
+      "real_command_example": "Edit docs/index.html; CI deploys upload-pages-artifact path ./docs",
+      "steps": [
+        { "id": "edit", "label": "Tweak storefront copy or CTA", "action": "attest" },
+        { "id": "push", "label": "Commit via MCP or local git", "action": "attest" }
+      ],
+      "reward_xp": 26,
+      "reward_shards": 2,
+      "unlock_type": "act_unlocked",
+      "completion_criteria": {
+        "type": "attestation",
+        "export_on_complete": true,
+        "suggested_artifact": "progress/game/quest-complete-storefront-banner.json"
+      },
+      "tags": ["pages", "brand"]
+    },
+    {
+      "id": "memory-palace-pilgrimage",
+      "title": "Memory Palace Pilgrimage",
+      "tier": "S",
+      "type": "companion",
+      "phase_act": 1,
+      "act_slug": "clearing",
+      "fun_description": "File one drawer note in Mempalace—empire ops remember themselves.",
+      "real_command_example": "mempalace_update_drawer projects/clarityforge-digital with game sync note",
+      "steps": [
+        { "id": "note", "label": "Add Mempalace drawer update", "action": "attest" },
+        { "id": "link", "label": "Link quest export path if any", "action": "attest" }
+      ],
+      "reward_xp": 12,
+      "reward_shards": 1,
+      "unlock_type": "always",
+      "completion_criteria": {
+        "type": "attestation",
+        "export_on_complete": true,
+        "suggested_artifact": "progress/game/quest-complete-memory-palace.json"
+      },
+      "tags": ["mempalace", "ops"]
+    },
+    {
+      "id": "market-crossing-first-8",
+      "title": "First Eight Crossing",
+      "tier": "L",
+      "type": "boss",
+      "phase_act": 2,
+      "act_slug": "crossroads",
+      "fun_description": "Boss: ship the real First 8 using launch-kit/First_8_Launch_Bundle.md—user-only Etsy.",
+      "real_command_example": "See launch-kit/First_8_Launch_Bundle.md — upload 8 listings yourself on Etsy",
+      "steps": [
+        { "id": "bundle", "label": "Prepare First 8 bundle from launch-kit", "action": "attest" },
+        { "id": "upload", "label": "Upload to Etsy (real shop)", "action": "attest_boss" },
+        { "id": "proof", "label": "Attest with listing proof (private notes OK)", "action": "attest_boss" }
+      ],
+      "reward_xp": 80,
+      "reward_shards": 10,
+      "unlock_type": "boss_attestation",
+      "completion_criteria": {
+        "type": "boss_attestation",
+        "export_on_complete": true,
+        "suggested_artifact": "progress/game/quest-complete-market-crossing-first-8.json"
+      },
+      "tags": ["boss", "etsy", "first-8"]
+    },
+    {
+      "id": "market-crossing-etsy",
+      "title": "Market Crossing",
+      "tier": "L",
+      "type": "boss",
+      "phase_act": 3,
+      "act_slug": "harvest",
+      "fun_description": "Boss: first live Etsy listing crossing—export recipe only, no fake complete.",
+      "real_command_example": "Export one listing spec from launch-kit → real Etsy upload → attest",
+      "steps": [
+        { "id": "export", "label": "Export listing JSON/MD from launch-kit", "action": "attest" },
+        { "id": "upload", "label": "Upload on Etsy (you)", "action": "attest_boss" },
+        { "id": "attest", "label": "I attest real upload completed", "action": "attest_boss" }
+      ],
+      "reward_xp": 100,
+      "reward_shards": 12,
+      "unlock_type": "boss_attestation",
+      "unlock_requirements": { "batch_listings": 30 },
+      "completion_criteria": {
+        "type": "boss_attestation",
+        "export_on_complete": true,
+        "suggested_artifact": "progress/game/quest-complete-market-crossing-etsy.json"
+      },
+      "tags": ["boss", "etsy"]
+    },
+    {
+      "id": "gold-guard-ads",
+      "title": "Gold Guard",
+      "tier": "M",
+      "type": "boss",
+      "phase_act": 3,
+      "act_slug": "harvest",
+      "fun_description": "Boss: ads spend ≤ $200/mo—tune Command Center before any ad dollar moves.",
+      "real_command_example": "python3 scripts/build_command_center_xlsx.py  # review ads row; spend ≤ 200",
+      "steps": [
+        { "id": "xlsx", "label": "Open xlsx ads assumptions", "action": "attest" },
+        { "id": "tune", "label": "Confirm spend cap ≤ $200", "action": "attest" },
+        { "id": "attest", "label": "Attest budget guard honored", "action": "attest_boss" }
+      ],
+      "reward_xp": 45,
+      "reward_shards": 5,
+      "unlock_type": "metric",
+      "unlock_requirements": { "batch_listings": 50 },
+      "completion_criteria": {
+        "type": "boss_attestation",
+        "export_on_complete": true,
+        "suggested_artifact": "progress/game/quest-complete-gold-guard-ads.json"
+      },
+      "tags": ["boss", "budget", "xlsx"]
+    },
+    {
+      "id": "first-coin",
+      "title": "First Coin",
+      "tier": "L",
+      "type": "achievement",
+      "phase_act": 3,
+      "act_slug": "harvest",
+      "fun_description": "Celebrate first real sale—attest only when money actually moved.",
+      "real_command_example": "Log sale in progress/ + update Command Center actuals (no fabricated revenue)",
+      "steps": [
+        { "id": "sale", "label": "Record real first sale (private notes OK)", "action": "attest_boss" },
+        { "id": "xlsx", "label": "Update xlsx actuals row", "action": "attest" }
+      ],
+      "reward_xp": 120,
+      "reward_shards": 15,
+      "unlock_type": "metric",
+      "unlock_requirements": { "batch_listings": 40 },
+      "completion_criteria": {
+        "type": "boss_attestation",
+        "export_on_complete": true,
+        "suggested_artifact": "progress/game/quest-complete-first-coin.json"
+      },
+      "tags": ["boss", "revenue"]
+    },
+    {
+      "id": "companion-ai-herald",
+      "title": "Companion AI Herald",
+      "tier": "S",
+      "type": "companion",
+      "phase_act": 1,
+      "act_slug": "clearing",
+      "fun_description": "Follow companion_signals.next_recommended—the forge whispers the next command.",
+      "real_command_example": "python3 scripts/recurring_pump.py --count 3 --wall-art --update-status --auton 947d2fc5",
+      "steps": [
+        { "id": "sync", "label": "Sync for companion_signals", "action": "sync_hint" },
+        { "id": "copy", "label": "Copy next_recommended command", "action": "copy_command" },
+        { "id": "run", "label": "Run or delegate to Hermes", "action": "attest" }
+      ],
+      "reward_xp": 18,
+      "reward_shards": 2,
+      "unlock_type": "always",
+      "completion_criteria": { "type": "companion", "signal": "new_pump_ready", "export_on_complete": false },
+      "tags": ["companion", "hermes"]
+    },
+    {
+      "id": "rest-day-nurture",
+      "title": "Rest Day Nurture",
+      "tier": "S",
+      "type": "daily",
+      "phase_act": 1,
+      "act_slug": "clearing",
+      "fun_description": "Legal review or gentle xlsx tweak—rest preserves momentum, no guilt.",
+      "real_command_example": "python3 scripts/build_command_center_xlsx.py",
+      "steps": [
+        { "id": "rest", "label": "Choose rest: legal review OR xlsx tweak", "action": "attest" },
+        { "id": "attest", "label": "Attest gentle progress", "action": "attest" }
+      ],
+      "reward_xp": 10,
+      "reward_shards": 0,
+      "unlock_type": "always",
+      "completion_criteria": { "type": "attestation", "export_on_complete": false },
+      "tags": ["rest", "wellness", "momentum"]
+    },
+    {
+      "id": "momentum-master",
+      "title": "Momentum Master",
+      "tier": "M",
+      "type": "achievement",
+      "phase_act": 2,
+      "act_slug": "crossroads",
+      "fun_description": "Ten legal-forge days attested—streak mastery without burnout.",
+      "real_command_example": "python3 -c \"from scripts.batch_asset_prompts import SHORT_DISCLOSURE; print(SHORT_DISCLOSURE)\"",
+      "steps": [
+        { "id": "streak", "label": "Maintain momentum via daily or rest quests", "action": "attest" },
+        { "id": "legal", "label": "Attest 10-day legal streak", "action": "attest" }
+      ],
+      "reward_xp": 50,
+      "reward_shards": 6,
+      "unlock_type": "always",
+      "completion_criteria": {
+        "type": "legal_streak",
+        "streak_days": 10,
+        "description": "10 consecutive legal forge days (attest + sync)",
+        "export_on_complete": true,
+        "suggested_artifact": "progress/game/legal-streak-10.json"
+      },
+      "tags": ["momentum", "legal"]
+    },
+    {
+      "id": "legendary-pkg-001",
+      "title": "Legendary: NS OS Bundle",
+      "tier": "L",
+      "type": "legendary",
+      "phase_act": 2,
+      "act_slug": "crossroads",
+      "fun_description": "Study PKG-001 in Codex Legendary—real bundle from PACKAGES JSON.",
+      "real_command_example": "Forge Codex → Legendary → PKG-001 Perimenopause Solopreneur NS OS",
+      "steps": [
+        { "id": "view", "label": "View legendary PKG-001 card", "action": "attest" },
+        { "id": "plan", "label": "Plan one bundle asset or listing angle", "action": "attest" }
+      ],
+      "reward_xp": 60,
+      "reward_shards": 8,
+      "unlock_type": "act_unlocked",
+      "completion_criteria": {
+        "type": "attestation",
+        "export_on_complete": true,
+        "suggested_artifact": "progress/game/quest-complete-legendary-pkg-001.json"
+      },
+      "tags": ["legendary", "bundle"]
+    },
+    {
+      "id": "legendary-pkg-010",
+      "title": "Legendary: Tenth Relic",
+      "tier": "L",
+      "type": "legendary",
+      "phase_act": 4,
+      "act_slug": "eternal-forge",
+      "fun_description": "Curate the tenth package relic—moonshot bundles need calm focus.",
+      "real_command_example": "Codex Legendary → 10th package in empire-state legendary_quests",
+      "steps": [
+        { "id": "view", "label": "Open 10th legendary package", "action": "attest" },
+        { "id": "attest", "label": "Attest bundle review for launch planning", "action": "attest" }
+      ],
+      "reward_xp": 70,
+      "reward_shards": 9,
+      "unlock_type": "metric",
+      "unlock_requirements": { "batch_listings": 100 },
+      "completion_criteria": {
+        "type": "metric_threshold",
+        "metric": "packages",
+        "threshold": 10,
+        "export_on_complete": true,
+        "suggested_artifact": "progress/game/quest-complete-legendary-pkg-010.json"
+      },
+      "tags": ["legendary", "moonshot"]
+    }
+  ]
 }

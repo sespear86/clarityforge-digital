@@ -511,6 +511,20 @@ h2 {
   min-height: var(--tap-min);
 }
 
+.codex-score-wrap {
+  margin-bottom: 1rem;
+}
+
+.codex-score-viz .codex-score-title {
+  margin-top: 0;
+  color: var(--cf-sage);
+}
+
+.small-meta {
+  font-size: 0.85rem;
+  color: var(--cf-muted);
+}
+
 .codex-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));

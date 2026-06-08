@@ -1,9 +1,9 @@
-# PRODUCTION_READY.md — ClarityForge Digital (AUTON d2250b7f)
+# PRODUCTION_READY.md — ClarityForge Digital (AUTON 947d2fc5 gamify + prior d2250b7f base)
 
 **Project**: ClarityForge Digital — Autonomous Passive Income Empire (hyper-niche digital printables, trackers, wall art for ADHD/neurodivergent, perimenopause, solopreneur wellness). $40k revenue in 90 days on ≤$200/mo budget, 100% legal, full Grok Build leverage.  
 **AUTON_ID**: d2250b7f (full review + regression fix + re-gate cycle after c2667b93/df92e0c4)  
 **Date**: 2026-06-08  
-**Status**: **In final gate thrust — VERDICT target: PASS**. System now fully reproducible end-to-end (critical batch injector restored + tested, smoke/pump green, legal in source, hygiene, fresh volume). Delivery + handoff + independent verifier next.
+**Status**: **Phase 6 gate PASS (947d2fc5 Clarity Quest)** — see `/tmp/grok-phase6-gate-report-947d2fc5.md`. Gamify layer verified: `verify_g6.sh`, 15/15 pytest, score **29**, 25 quests, C2 Pages regen, static `docs/game/`. Next: MCP push + remote CI babysit (phases 7–10).
 
 ## This Run Context (d2250b7f)
 User directive via /bustanut + self-continuation: "We are working on the project at https://github.com/sespear86/clarityforge-digital. Do a full review. Create a plan of attack. Build out all necessary tools and resources. Determine the Finish Line. Build the project until the Finish Line goal is met."
@@ -56,19 +56,29 @@ Key commands (from project root):
 - xlsx refresh: `python scripts/build_command_center_xlsx.py` (edit yellow cells in Assumptions; feed real Etsy/Payhip/Pinterest data weekly)
 - Tests: `python -m pytest tests/ -q` or `python -m unittest discover -s tests`
 - CI: Pushes + daily cron run full smoke (now includes batch legal) then Pages deploy from docs/.
+- **Clarity Quest (947d2fc5)**: `docs/game/` static game; smoke job runs `build_game_data.py` + `test_game_data.py`; `deploy-pages` regenerates game data before Upload (C2). Play: `https://sespear86.github.io/clarityforge-digital/game/`. Build: `python3 scripts/build_game_data.py --auton 947d2fc5`. G6 check: `bash scripts/verify_g6.sh`.
 
 Upload workflow: First_8_Launch_Bundle.md + PACKAGES + pump_*.json (match heroes from asset manifests or re-gen via image_gen with locked brand prompt). Legal disclosure already in every description.
 
-## Next (to Gate PASS + Handoff)
-- MCP push_files delivery of batch.py, .gitignore, ci.yml update, execution/ review log, updated PRODUCTION_READY, pump logs/artifacts as appropriate.
-- Minor docs/AGENTS refresh for d2250 volume + new script.
-- Independent verifier subagent run against autonomous/docs/PRODUCTION_CHECKLIST.md + project-specific (AGENTS, Finish Line above, smoke evidence, legal in source).
-- Fix any 0-issue items from verifier.
-- Final PRODUCTION_READY + Mempalace filing (drawer projects/clarityforge-digital + diary) + Hermes kanban if channels live.
-- Example scheduler for daily/weekly pump.
-- Declare PASS only on gate.
+## Phase 6 gate evidence (947d2fc5 — 2026-06-07)
+- Report: `/tmp/grok-phase6-gate-report-947d2fc5.md` — **VERDICT: PASS**
+- Commands: `bash scripts/verify_g6.sh`; `python3 -m pytest tests/ -q` → 15 passed
+- Play: `https://sespear86.github.io/clarityforge-digital/game/` (after push + Pages deploy)
 
-**Resume**: `grok -p "/bustanut --resume d2250b7f"`
+## Next (phases 7–10 handoff)
+- MCP `push_files` / PR: gamify tree on `auton/947d2fc5-g2` → `main`
+- pr-babysit or watch first green CI (smoke + deploy-pages C2)
+- Hermes kanban lane *ClarityForge* — game feedback / quest ideas
+- Mempalace drawer `projects/clarityforge-digital` (diary updated on PASS)
+
+## Handoff notes (947d2fc5 Clarity Quest)
+
+- **Mempalace**: drawer `projects/clarityforge-digital` — diary entry with AUTON 947d2fc5, empire_score **29** fixture, Pages play URL, `DESIGN_GAMIFY_947d2fc5.md` path.
+- **Hermes kanban**: lane *ClarityForge* — "game feedback / new quest ideas" (static game; no secrets in exports).
+
+**Resume gamify AUTON**: `grok -p "/bustanut --resume 947d2fc5"`
+
+**Resume prior pump AUTON**: `grok -p "/bustanut --resume d2250b7f"`
 
 **Bust a nut. Production system for the empire nearly at gate. Exact signatures per autonomous/SKILL.md. Washington has the ball.**
 
