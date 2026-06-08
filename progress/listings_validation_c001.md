@@ -1,0 +1,1 @@
+[Concise validation report from subagent 019ea66d-45a3-7f51-9081-9b2965faf1e2 during c001: confirms 12/27 full legal, 0/27 brand, 15 abbreviated, packaging recs. Integrated with fixes via package_ready_listings.py (brand + legal injected). See local for full. Gate progress. Bust a nut.]
