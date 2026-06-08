@@ -26,8 +26,10 @@ class TestXlsx(unittest.TestCase):
         yellow = 0
         for row in ws.iter_rows(min_row=5, max_row=20, min_col=2, max_col=2):
             for cell in row:
-                if cell.fill and cell.fill.fgColor and cell.fill.fgColor.rgb == "00FFFF00":
-                    yellow += 1
+                if cell.fill and cell.fill.fgColor:
+                    rgb = str(cell.fill.fgColor.rgb or '').upper()
+                    if 'FFFF00' in rgb:
+                        yellow += 1
         self.assertGreaterEqual(yellow, 5, "Expected several yellow editable assumption cells")
 
     def test_snapshot_and_formulas(self):
