@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clarity Quest: Empire Forge — ClarityForge Digital</title>
+  <meta name="description" content="Play the build. Forge the empire. A calm, ADHD-friendly companion to your real ClarityForge velocity engine.">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <div class="brand-block">
+        <p class="eyebrow">Clarity Quest</p>
+        <h1 class="site-title">Empire Forge</h1>
+        <p class="tagline">Play the build. Forge the empire.</p>
+      </div>
+      <div class="hud" aria-label="Empire and momentum">
+        <div class="empire-ring-wrap" aria-labelledby="empire-score-label">
+          <svg class="empire-ring" viewBox="0 0 120 120" role="img" aria-hidden="true">
+            <circle class="ring-track" cx="60" cy="60" r="52"></circle>
+            <circle class="ring-progress" cx="60" cy="60" r="52" id="empire-ring-progress"></circle>
+          </svg>
+          <div class="empire-ring-label">
+            <span id="empire-score-label" class="sr-only">Empire score</span>
+            <span class="empire-score-value" id="empire-score-value" aria-live="polite">—</span>
+            <span class="empire-score-cap">/ 100</span>
+          </div>
+        </div>
+        <div class="momentum-pill" id="momentum-display" aria-live="polite">
+          <span class="momentum-label">Momentum</span>
+          <span class="momentum-value" id="momentum-value">0</span>
+          <span class="momentum-grace" id="momentum-grace" hidden>Grace available</span>
+        </div>
+      </div>
+    </div>
+    <nav class="main-nav" aria-label="Game sections">
+      <ul class="nav-list" id="main-nav">
+        <li><a href="#home" data-route="home" class="nav-link is-active">Home</a></li>
+        <li><a href="#act-map" data-route="act-map" class="nav-link">Act Map</a></li>
+        <li><a href="#quests" data-route="quests" class="nav-link">Quests</a></li>
+        <li><a href="#codex" data-route="codex" class="nav-link">Codex</a></li>
+        <li><a href="#ledger" data-route="ledger" class="nav-link">Ledger</a></li>
+        <li><a href="#sync" data-route="sync" class="nav-link">Sync</a></li>
+        <li><a href="#settings" data-route="settings" class="nav-link">Settings</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main" class="main-content" tabindex="-1">
+    <section id="view-home" class="view is-active" data-view="home" aria-labelledby="home-heading">
+      <h2 id="home-heading">Home</h2>
+      <p class="calm-lead" id="home-act-summary">Loading your forge…</p>
+      <div class="card primary-cta-card">
+        <h3>Today&rsquo;s Forge Action</h3>
+        <p id="home-cta-copy" class="calm-copy">One small win at a time. No guilt if you rest.</p>
+        <button type="button" class="btn btn-primary btn-large" id="home-forge-cta">Open recommended quest</button>
+      </div>
+      <div class="card-row">
+        <button type="button" class="btn btn-secondary" id="home-sync-btn">Sync empire data</button>
+        <button type="button" class="btn btn-secondary" id="home-export-btn">Export game log</button>
+      </div>
+    </section>
+
+    <section id="view-act-map" class="view" data-view="act-map" aria-labelledby="act-map-heading" hidden>
+      <h2 id="act-map-heading">Act Map</h2>
+      <p class="calm-copy">Four landmarks on your 90-day forge. Locked acts show what unlocks them.</p>
+      <div id="act-map-grid" class="act-map-grid" role="list"></div>
+    </section>
+
+    <section id="view-quests" class="view" data-view="quests" aria-labelledby="quests-heading" hidden>
+      <h2 id="quests-heading">Quests</h2>
+      <div class="quests-layout">
+        <ul id="quest-list" class="quest-list" role="list"></ul>
+        <article id="quest-detail" class="quest-detail card" aria-live="polite" hidden>
+          <h3 id="quest-detail-title"></h3>
+          <p id="quest-detail-desc" class="calm-copy"></p>
+          <ol id="quest-steps" class="quest-steps"></ol>
+          <p class="quest-rewards" id="quest-rewards"></p>
+          <button type="button" class="btn btn-primary btn-large" id="quest-complete-btn">I completed this</button>
+        </article>
+      </div>
+    </section>
+
+    <section id="view-codex" class="view" data-view="codex" aria-labelledby="codex-heading" hidden>
+      <h2 id="codex-heading">Forge Codex</h2>
+      <p class="calm-copy">Collect listing relics from your real batch. Mark illustrated when you&rsquo;ve curated visuals.</p>
+      <div class="codex-tabs" role="tablist" aria-label="Codex views">
+        <button type="button" class="tab is-active" role="tab" aria-selected="true" data-codex-tab="deck" id="tab-deck">Deck</button>
+        <button type="button" class="tab" role="tab" aria-selected="false" data-codex-tab="legendary" id="tab-legendary">Legendary</button>
+      </div>
+      <label class="filter-label" for="codex-niche-filter">Filter by niche</label>
+      <select id="codex-niche-filter" class="select-input">
+        <option value="">All niches</option>
+      </select>
+      <div id="codex-grid" class="codex-grid" role="list"></div>
+    </section>
+
+    <section id="view-ledger" class="view" data-view="ledger" aria-labelledby="ledger-heading" hidden>
+      <h2 id="ledger-heading">Command Ledger</h2>
+      <p class="calm-copy">Scenario bands from your Command Center. Tune assumptions in the spreadsheet &mdash; not here.</p>
+      <div id="ledger-bands" class="ledger-bands"></div>
+      <div class="card tuner-note">
+        <h3>Tuner of Fates</h3>
+        <p>Yellow cells and scenario tuning live in <code>Command_Center_*.xlsx</code>. Regenerate with:</p>
+        <pre class="code-block" id="tuner-command">python3 scripts/build_command_center_xlsx.py</pre>
+        <button type="button" class="btn btn-secondary btn-copy" data-copy-target="tuner-command">Copy command</button>
+      </div>
+    </section>
+
+    <section id="view-sync" class="view" data-view="sync" aria-labelledby="sync-heading" hidden>
+      <h2 id="sync-heading">Sync &amp; Export</h2>
+      <p class="calm-copy">Pull fresh <code>empire-state.json</code> from this site, or paste ramp JSON if offline.</p>
+      <p class="sync-meta" id="last-sync-display">Last synced: never</p>
+      <button type="button" class="btn btn-primary" id="sync-fetch-btn">Fetch empire-state.json</button>
+      <label class="filter-label" for="sync-paste">Paste ramp-status or empire JSON (optional)</label>
+      <textarea id="sync-paste" class="textarea-input" rows="6" placeholder='{"metrics": {"batch_listings": 30, ...}}'></textarea>
+      <button type="button" class="btn btn-secondary" id="sync-paste-btn">Merge paste into overlay</button>
+      <div class="card export-recipe" id="export-recipe-block">
+        <h3>Commit recipe</h3>
+        <pre class="code-block" id="commit-recipe"></pre>
+      </div>
+      <div class="card-row">
+        <button type="button" class="btn btn-secondary" id="download-game-log-btn">Download game-log JSON</button>
+        <button type="button" class="btn btn-secondary" id="download-quest-export-btn" disabled>Download last quest-complete JSON</button>
+      </div>
+    </section>
+
+    <section id="view-settings" class="view" data-view="settings" aria-labelledby="settings-heading" hidden>
+      <h2 id="settings-heading">Settings</h2>
+      <div class="setting-row">
+        <label class="toggle-label">
+          <input type="checkbox" id="setting-focus-mode">
+          <span>Focus mode (hide secondary chrome)</span>
+        </label>
+      </div>
+      <div class="setting-row">
+        <label class="toggle-label">
+          <input type="checkbox" id="setting-sound">
+          <span>Sound (off by default)</span>
+        </label>
+      </div>
+      <button type="button" class="btn btn-secondary" id="reset-local-btn">Reset local progress (export first)</button>
+    </section>
+  </main>
+
+  <div id="toast-region" class="toast-region" role="status" aria-live="polite" aria-atomic="true"></div>
+  <div id="celebrate-layer" class="celebrate-layer" aria-hidden="true"></div>
+
+  <footer class="site-footer" role="contentinfo">
+    <p class="wellness-note">Wellness note: This game mirrors real work pace. Rest days count. No shame for pausing.</p>
+    <p id="legal-footer-text" class="legal-footer"></p>
+    <p class="footer-links">
+      <a href="https://www.etsy.com/shop/ClarityForgeDigital" target="_blank" rel="noopener">Etsy</a>
+      &middot;
+      <a href="https://payhip.com/ClarityForgeDigital" target="_blank" rel="noopener">Payhip</a>
+      &middot;
+      <a href="../index.html">ClarityForge HQ</a>
+    </p>
+  </footer>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
