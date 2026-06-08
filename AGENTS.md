@@ -16,6 +16,13 @@
 - Tests: `python -m unittest discover -s tests` or `python -m pytest tests/`
 - CI: Pushes + daily cron run the full smoke (generator + batch legal + xlsx + tests + manifest check) then Pages deploy.
 
+## Clarity Quest: Empire Forge (AUTON 947d2fc5)
+- **Play**: `docs/game/` — static ESM game on GitHub Pages at `/game/` (link from `docs/index.html`).
+- **After pump or launch-kit changes**: `python3 scripts/build_game_data.py --auton 947d2fc5` → refreshes `docs/game/data/empire-state.json` (loot deck, legendary packages, empire score, legal fields from `batch_asset_prompts.py` SSOT).
+- **Quest exports**: players download JSON → commit under `progress/game/` (see `progress/game/README.md`). CI **regenerates** game data in `deploy-pages` before Upload (C2); committed `data/` is a dev snapshot only.
+- **Local serve**: `cd docs && python3 -m http.server 8765` → `http://127.0.0.1:8765/game/`
+- **Verify**: `python3 -m pytest tests/test_game_data.py -q` and `bash scripts/verify_g6.sh`
+
 ## Adding New Work (autonomous or human)
 - Update todos/state with phase (research/design/execute/gate/handoff).
 - Use bg:true for image_gen batches, long subagents, gate verifiers.

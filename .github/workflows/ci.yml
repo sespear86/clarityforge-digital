@@ -38,6 +38,11 @@ print("Batch + legal smoke PASS")
         run: |
           python3 -m pytest tests/ -q --tb=line || python3 -m unittest discover -s tests -v
           echo "Tests PASS"
+      - name: Game data build smoke (947d2fc5)
+        run: |
+          python3 scripts/build_game_data.py --auton ci-smoke
+          python3 -m pytest tests/test_game_data.py -q --tb=line
+          test -f docs/game/data/empire-state.json
       - name: Legal + manifest quick check
         run: |
           python3 -c '
@@ -64,6 +69,15 @@ print("Legal/manifest check done")
       - uses: actions/checkout@v4
       - name: Setup Pages
         uses: actions/configure-pages@v4
+      - name: Regenerate game data for Pages (C2 normative, additive)
+        run: |
+          python3 scripts/build_game_data.py --auton ci-pages
+          test -f docs/game/data/empire-state.json
+          # CRITICAL (C2): deploy-pages does fresh checkout + direct ./docs upload.
+          # The committed docs/game/data/empire-state.json is a dev snapshot only.
+          # This step ensures the Pages artifact always contains freshly built data
+          # from current progress/*-ramp-status.json + launch-kit/* at CI time.
+          # Never remove; Pages serves the output of this build.
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
