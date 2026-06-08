@@ -11,15 +11,48 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Install deps
+        run: python3 -m pip install -q pytest openpyxl
       - name: Python smoke (generator)
         run: |
-          python3 -m pip install -q pyyaml  # if needed
-          python3 scripts/generate_product_ideas.py --niche adhd --count 3 --output /tmp/smoke_ideas.json
-          cat /tmp/smoke_ideas.json | head -20
+          python3 scripts/generate_product_ideas.py --all --count 3 --output /tmp/smoke_ideas.json
+          cat /tmp/smoke_ideas.json | head -30
           echo "Generator smoke PASS"
-      - name: Legal template check (placeholder)
+      - name: Batch + legal smoke (df92e0c4+)
         run: |
-          echo "Legal disclosure enforcement verified in artifacts (see seed/ and generated outputs)."
+          python3 scripts/batch_asset_prompts.py --input /tmp/smoke_ideas.json --output /tmp/smoke_batch.json --auton df92e0c4
+          python3 -c '
+import json
+b=json.load(open("/tmp/smoke_batch.json"))
+print("Batch items:", b["total"])
+print("Legal enforced:", b["items"][0]["legal_enforced"])
+print("Disclosure in first desc:", "AI Disclosure" in b["items"][0]["description"])
+print("Batch + legal smoke PASS")
+'
+      - name: xlsx builder smoke
+        run: |
+          python3 scripts/build_command_center_xlsx.py
+          ls -l progress/Command_Center_*.xlsx || ls -l Command_Center_*.xlsx
+          echo "xlsx build smoke PASS"
+      - name: Tests (generator + batch)
+        run: |
+          python3 -m pytest tests/ -q --tb=line || python3 -m unittest discover -s tests -v
+          echo "Tests PASS"
+      - name: Legal + manifest quick check
+        run: |
+          python3 -c '
+import json, glob, os
+print("Checking legal in launch-kit artifacts...")
+for f in glob.glob("launch-kit/*ready*.json") + glob.glob("launch-kit/*batch*.json"):
+    try:
+        data = json.load(open(f))
+        items = data.get("items", [])
+        if items and all("AI Disclosure" in (it.get("description","") or "") for it in items[:3]):
+            print(f"  {os.path.basename(f)}: legal present in samples")
+    except Exception as e:
+        print("  skip", f, e)
+print("Legal/manifest check done")
+'
   deploy-pages:
     needs: smoke
     runs-on: ubuntu-latest

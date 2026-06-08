@@ -1,0 +1,11 @@
+{
+  "auton": "df92e0c4",
+  "generated_at": "2026-06-08",
+  "source": "image_gen this run (brand: clean minimalist sage/beige)",
+  "samples": [
+    {"id": 1, "file": "01_rejection_sensitivity_system.jpg", "prompt_match": "ADHD / Neurodivergent Rejection Sensitivity System", "type": "cover"},
+    {"id": 2, "file": "02_sleep_optimization_tracker.jpg", "prompt_match": "Perimenopause / Menopause Sleep Optimization Tracker", "type": "cover"},
+    {"id": 3, "file": "03_hyperfocus_challenge.jpg", "prompt_match": "ADHD / Neurodivergent Hyperfocus Management Challenge", "type": "cover"}
+  ],
+  "note": "Real samples generated during df92e0c4. Pair with batch listings. Full legal in descriptions via batch script."
+}
