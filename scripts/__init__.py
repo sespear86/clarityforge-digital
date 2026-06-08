@@ -1,0 +1,1 @@
+# ClarityForge scripts package (enables SSOT imports for build_game_data.py).
