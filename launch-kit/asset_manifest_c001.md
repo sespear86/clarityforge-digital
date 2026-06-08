@@ -1,0 +1,1 @@
+Manifest and packaging from local c001 thrust (see package_ready_listings.py run output: 27 items, legal/brand enforced post fixes, etsy csv stub). Full in local LAUNCH_KIT/asset_manifest_c001_*.json . 27 ready_listings now production per subagent + auton-kit. Bust a nut.
