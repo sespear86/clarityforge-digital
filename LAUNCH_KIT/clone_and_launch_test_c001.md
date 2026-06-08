@@ -1,0 +1,1 @@
+Clone and launch test c001: steps using the package script, manifest, etsy csv, 27 listings now fixed and production ready (legal and brand enforced per subagent reports and fixes). Gate met for the listings production. Bust a nut.
